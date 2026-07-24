@@ -164,6 +164,13 @@ ul {
     transition: var(--transition-fast);
 }
 
+/* Ensure button elements using .nav-link have transparent background */
+.nav-link button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -341,6 +348,91 @@ ul {
 
 .registration-card,
 .feature-card,
+/* ==== Premium Form Styling ==== */
+
+/* Two‑column responsive grid for registration forms */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Consistent form group styling */
+.form-group {
+    background: rgba(26, 35, 50, 0.6);
+    padding: 1rem 1.2rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+}
+
+.form-group:hover {
+    background: rgba(26, 35, 50, 0.75);
+    box-shadow: 0 0 0 2px var(--primary);
+}
+
+/* Input styling – applied via .premium-input class */
+.premium-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--dark-text);
+    padding: 0.6rem 0.9rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+    font-size: 0.94rem;
+}
+
+.premium-input::placeholder {
+    color: var(--dark-text-secondary);
+    opacity: 0.8;
+}
+
+.premium-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Apply input style to all form elements used in the app */
+.form-input {
+    composes: premium-input;
+}
+
+/* Ensure textarea matches the input style */
+textarea.form-input {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Responsive tweak – single column on narrow screens */
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Adjust login-card and contact-form to share the new form-group look */
+.login-card,
+.contact-form {
+    background: linear-gradient(135deg, rgba(26, 35, 50, 0.9), rgba(35, 45, 63, 0.76));
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+}
+
+/* Button spacing inside forms */
+.form-group+.form-group {
+    margin-top: 1rem;
+}
+
+/* Ensure full‑width button aligns with new layout */
+.btn.full-width {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
 .visual-card,
 .module-card,
 .mission-card {
@@ -906,19 +998,23 @@ ul {
     font-weight: 700;
 }
 
-.dashboard-card .form-group label,
-.modal-content .form-group label {
-    color: #1e293b;
+.modal-title {
+    color: var(--dark-text);
 }
 
-.form-input {
-    width: 100%;
-    padding: 0.86rem 1rem;
+.modal-desc {
+    color: var(--dark-text-secondary);
+}
+
+.dashboard-card .form-group label,
+..modal-content .form-group label {
+    color: var(--dark-text);
+}
+
+.modal-content .form-input {
+    background: var(--dark-bg-tertiary);
+    color: var(--dark-text);
     border: 1px solid rgba(37, 99, 235, 0.25);
-    border-radius: var(--radius-md);
-    background: #fff;
-    color: var(--card-text);
-    transition: var(--transition-fast);
 }
 
 .login-card .form-input,
@@ -1011,8 +1107,9 @@ textarea.form-input {
     padding: 2rem;
     border: 1px solid rgba(37, 99, 235, 0.22);
     border-radius: var(--radius-xl);
-    background: #fff;
-    color: var(--card-text);
+    background: linear-gradient(135deg, rgba(26, 35, 50, 0.9), rgba(35, 45, 63, 0.76));
+    color: var(--dark-text);
+
     box-shadow: var(--shadow-lg);
 }
 
@@ -1039,17 +1136,6 @@ textarea.form-input {
     margin-bottom: 1.2rem;
 }
 
-.modal-title {
-    margin: 0;
-    color: var(--card-text);
-    font-size: 1.35rem;
-}
-
-.modal-desc {
-    margin: 0.35rem 0 0;
-    color: var(--muted-text);
-    line-height: 1.6;
-}
 
 .table-wrap {
     overflow-x: auto;
@@ -1182,6 +1268,7 @@ textarea.form-input {
 }
 
 @media (max-width: 1100px) {
+
     .stats-grid,
     .student-stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));

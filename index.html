@@ -15,7 +15,8 @@
         <div class="container navbar">
             <a href="#home" class="logo">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-12h1m-1 4h1m-1 4h1M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+                    <path
+                        d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-12h1m-1 4h1m-1 4h1M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
                 </svg>
                 Hostel Management
             </a>
@@ -32,7 +33,11 @@
                     <li><a href="#about" class="nav-link">About Us</a></li>
                     <li><a href="#features" class="nav-link">Features</a></li>
                     <li><a href="#modules" class="nav-link">Modules</a></li>
-                    <li><a href="#login" class="nav-link">Login</a></li>
+                    <li>
+                        <a href="#" class="nav-link open-modal" data-modal="login-modal">
+                            Login
+                        </a>
+                    </li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -51,7 +56,7 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#get-started" class="btn btn-primary">Get Started</a>
-                    <a href="#login" class="btn btn-secondary">Login Portal</a>
+                    <button class="btn btn-secondary open-modal" data-modal="login-modal">Login Portal</button>
                 </div>
             </div>
         </section>
@@ -73,8 +78,10 @@
                             </svg>
                         </div>
                         <h3>Student Registration</h3>
-                        <p>Register as a hosteller to apply for rooms, check fee invoices, file complaints, and view hostel announcements.</p>
-                        <button class="btn btn-primary open-modal" data-modal="student-modal">Register as Student</button>
+                        <p>Register as a hosteller to apply for rooms, check fee invoices, file complaints, and view
+                            hostel announcements.</p>
+                        <button class="btn btn-primary open-modal" data-modal="student-modal">Register as
+                            Student</button>
                     </article>
 
                     <article class="registration-card">
@@ -85,7 +92,8 @@
                             </svg>
                         </div>
                         <h3>Staff Registration</h3>
-                        <p>Register as a warden or administrator to manage room allocation, reports, leaves, and student complaints.</p>
+                        <p>Register as a warden or administrator to manage room allocation, reports, leaves, and student
+                            complaints.</p>
                         <button class="btn btn-primary open-modal" data-modal="staff-modal">Register as Staff</button>
                     </article>
                 </div>
@@ -100,7 +108,8 @@
                     <h2 class="section-title">Simplifying Hostel Operations</h2>
                     <p>
                         Hostel Management System is designed to bring <span class="highlight-text">efficiency</span>,
-                        <span class="highlight-text">clarity</span>, and <span class="highlight-text">transparency</span>
+                        <span class="highlight-text">clarity</span>, and <span
+                            class="highlight-text">transparency</span>
                         to college residential management.
                     </p>
                     <p>
@@ -148,7 +157,10 @@
 
                 <div class="features-grid">
                     <article class="feature-card open-modal" data-modal="staff-mgmt-modal">
-                        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /></svg></div>
+                        <div class="feature-icon"><svg viewBox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                            </svg></div>
                         <div class="feature-info">
                             <h3>Staff Management</h3>
                             <p>Maintain digital profiles of wardens, helpers, security, and housekeepers.</p>
@@ -156,7 +168,10 @@
                     </article>
 
                     <article class="feature-card open-modal" data-modal="student-mgmt-modal">
-                        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /></svg></div>
+                        <div class="feature-icon"><svg viewBox="0 0 24 24">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                            </svg></div>
                         <div class="feature-info">
                             <h3>Student Management</h3>
                             <p>Track student profiles, check-in status, room keys, and contact details.</p>
@@ -164,7 +179,9 @@
                     </article>
 
                     <article class="feature-card open-modal" data-modal="room-mgmt-modal">
-                        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M2 4v16M2 20h20M22 14v6M2 14h20" /></svg></div>
+                        <div class="feature-icon"><svg viewBox="0 0 24 24">
+                                <path d="M2 4v16M2 20h20M22 14v6M2 14h20" />
+                            </svg></div>
                         <div class="feature-info">
                             <h3>Room and Allocation</h3>
                             <p>Monitor room configurations, occupancy statistics, and block assignments.</p>
@@ -172,7 +189,10 @@
                     </article>
 
                     <article class="feature-card open-modal" data-modal="fee-mgmt-modal">
-                        <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" /><line x1="1" y1="10" x2="23" y2="10" /></svg></div>
+                        <div class="feature-icon"><svg viewBox="0 0 24 24">
+                                <rect x="1" y="4" width="22" height="16" rx="2" />
+                                <line x1="1" y1="10" x2="23" y2="10" />
+                            </svg></div>
                         <div class="feature-info">
                             <h3>Fee Management</h3>
                             <p>Generate bills, record payment transactions, and track outstanding balances.</p>
@@ -180,7 +200,9 @@
                     </article>
 
                     <article class="feature-card open-modal" data-modal="complaint-mgmt-modal">
-                        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg></div>
+                        <div class="feature-icon"><svg viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg></div>
                         <div class="feature-info">
                             <h3>Complaint Management</h3>
                             <p>Review filed complaints, dispatch staff, and update ticket progress.</p>
@@ -199,19 +221,40 @@
                 </div>
 
                 <div class="modules-grid">
-                    <article class="module-card"><span class="module-number">01</span><h3>Student Management</h3><p>Student records, hostel applications, room status, and contact information.</p></article>
-                    <article class="module-card"><span class="module-number">02</span><h3>Staff Management</h3><p>Warden, caretaker, account staff, and support team profiles.</p></article>
-                    <article class="module-card"><span class="module-number">03</span><h3>Room Management</h3><p>Room types, availability, occupancy, cleaning, and maintenance status.</p></article>
-                    <article class="module-card"><span class="module-number">04</span><h3>Fee Management</h3><p>Fee invoices, paid records, pending payments, and ledgers.</p></article>
-                    <article class="module-card"><span class="module-number">05</span><h3>Complaint Management</h3><p>Maintenance requests, severity, ticket status, and resolution updates.</p></article>
-                    <article class="module-card"><span class="module-number">06</span><h3>Visitor Management</h3><p>Visitor entry records, student reference, purpose, and timing.</p></article>
-                    <article class="module-card"><span class="module-number">07</span><h3>Reports</h3><p>Room allocation lists, fee summaries, complaint reports, and audit data.</p></article>
+                    <article class="module-card"><span class="module-number">01</span>
+                        <h3>Student Management</h3>
+                        <p>Student records, hostel applications, room status, and contact information.</p>
+                    </article>
+                    <article class="module-card"><span class="module-number">02</span>
+                        <h3>Staff Management</h3>
+                        <p>Warden, caretaker, account staff, and support team profiles.</p>
+                    </article>
+                    <article class="module-card"><span class="module-number">03</span>
+                        <h3>Room Management</h3>
+                        <p>Room types, availability, occupancy, cleaning, and maintenance status.</p>
+                    </article>
+                    <article class="module-card"><span class="module-number">04</span>
+                        <h3>Fee Management</h3>
+                        <p>Fee invoices, paid records, pending payments, and ledgers.</p>
+                    </article>
+                    <article class="module-card"><span class="module-number">05</span>
+                        <h3>Complaint Management</h3>
+                        <p>Maintenance requests, severity, ticket status, and resolution updates.</p>
+                    </article>
+                    <article class="module-card"><span class="module-number">06</span>
+                        <h3>Visitor Management</h3>
+                        <p>Visitor entry records, student reference, purpose, and timing.</p>
+                    </article>
+                    <article class="module-card"><span class="module-number">07</span>
+                        <h3>Reports</h3>
+                        <p>Room allocation lists, fee summaries, complaint reports, and audit data.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- Login page converted into a section -->
-        <section class="section-block login-wrapper" id="login">
+        <section class="section-block login-wrapper" id="login" style="display:none">
             <div class="container login-container">
                 <div class="login-card">
                     <div class="section-header compact-header">
@@ -231,11 +274,13 @@
                         </div>
                         <div class="form-group">
                             <label for="login-email">Email Address</label>
-                            <input type="email" id="login-email" class="form-input" placeholder="e.g. john.doe@university.edu" required>
+                            <input type="email" id="login-email" class="form-input"
+                                placeholder="e.g. john.doe@university.edu" required>
                         </div>
                         <div class="form-group">
                             <label for="login-pwd">Password</label>
-                            <input type="password" id="login-pwd" class="form-input" placeholder="Enter password" required>
+                            <input type="password" id="login-pwd" class="form-input" placeholder="Enter password"
+                                required>
                         </div>
                         <div class="login-row">
                             <label class="checkbox-label"><input type="checkbox"> Remember me</label>
@@ -246,13 +291,50 @@
                 </div>
             </div>
         </section>
-
+        <!-- Login Modal -->
+        <div class="modal" id="login-modal">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+                <div class="modal-header">
+                    <h3 class="modal-title">Portal Login</h3>
+                    <p class="modal-desc">Access your hostel management dashboard.</p>
+                </div>
+                <form id="modal-login-form">
+                    <div class="form-group">
+                        <label for="modal-login-role">Select Role</label>
+                        <select id="modal-login-role" class="form-input" required>
+                            <option value="student" selected>Student</option>
+                            <option value="staff">Staff</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-login-email">Email Address</label>
+                        <input type="email" id="modal-login-email" class="form-input"
+                            placeholder="e.g. john.doe@university.edu" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-login-pwd">Password</label>
+                        <input type="password" id="modal-login-pwd" class="form-input" placeholder="Enter password" required>
+                    </div>
+                    <div class="login-row">
+                        <label class="checkbox-label"><input type="checkbox"> Remember me</label>
+                        <button type="button" class="text-button" id="modal-forgot-password">Forgot Password?</button>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Login to Dashboard</button>
+                </form>
+            </div>
+        </div>
         <!-- Admin dashboard merged into this single-page layout -->
         <section class="dashboard-panel page-section" id="admin-dashboard" data-dashboard="admin">
             <div class="dashboard-topbar">
                 <div class="logo-area"><span class="small-logo">HMS</span><span>Admin Dashboard</span></div>
                 <div class="user-area">
-                    <div class="profile-widget"><div class="avatar">AD</div><div class="profile-info"><span class="profile-name">System Admin</span><span class="profile-role">Super Administrator</span></div></div>
+                    <div class="profile-widget">
+                        <div class="avatar">AD</div>
+                        <div class="profile-info"><span class="profile-name">System Admin</span><span
+                                class="profile-role">Super Administrator</span></div>
+                    </div>
                     <button class="btn-logout-top logout-button">Logout</button>
                 </div>
             </div>
@@ -268,34 +350,92 @@
                     <button class="sidebar-logout logout-button">Logout</button>
                 </aside>
                 <div class="main-content">
-                    <div class="page-header"><h2>Admin Dashboard</h2><p>Welcome back, Admin. System operations are running normally.</p></div>
+                    <div class="page-header">
+                        <h2>Admin Dashboard</h2>
+                        <p>Welcome back, Admin. System operations are running normally.</p>
+                    </div>
                     <div class="stats-grid">
-                        <article class="stat-card"><div class="stat-icon blue">ST</div><div><span class="stat-label">Total Students</span><span class="stat-value" data-stat="students">250</span></div></article>
-                        <article class="stat-card"><div class="stat-icon purple">SF</div><div><span class="stat-label">Total Staff</span><span class="stat-value" data-stat="staff">15</span></div></article>
-                        <article class="stat-card"><div class="stat-icon blue">RM</div><div><span class="stat-label">Total Rooms</span><span class="stat-value">120</span></div></article>
-                        <article class="stat-card"><div class="stat-icon green">OR</div><div><span class="stat-label">Occupied Rooms</span><span class="stat-value" data-stat="occupied">110</span></div></article>
-                        <article class="stat-card"><div class="stat-icon green">AR</div><div><span class="stat-label">Available Rooms</span><span class="stat-value" data-stat="available">10</span></div></article>
-                        <article class="stat-card"><div class="stat-icon red">PC</div><div><span class="stat-label">Pending Complaints</span><span class="stat-value" data-stat="complaints">5</span></div></article>
-                        <article class="stat-card"><div class="stat-icon green">FE</div><div><span class="stat-label">Fees Collected</span><span class="stat-value">Rs. 9,75,000</span></div></article>
-                        <article class="stat-card"><div class="stat-icon orange">PP</div><div><span class="stat-label">Pending Payments</span><span class="stat-value">12 Students</span></div></article>
+                        <article class="stat-card">
+                            <div class="stat-icon blue">ST</div>
+                            <div><span class="stat-label">Total Students</span><span class="stat-value"
+                                    data-stat="students">250</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon purple">SF</div>
+                            <div><span class="stat-label">Total Staff</span><span class="stat-value"
+                                    data-stat="staff">15</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon blue">RM</div>
+                            <div><span class="stat-label">Total Rooms</span><span class="stat-value">120</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon green">OR</div>
+                            <div><span class="stat-label">Occupied Rooms</span><span class="stat-value"
+                                    data-stat="occupied">110</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon green">AR</div>
+                            <div><span class="stat-label">Available Rooms</span><span class="stat-value"
+                                    data-stat="available">10</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon red">PC</div>
+                            <div><span class="stat-label">Pending Complaints</span><span class="stat-value"
+                                    data-stat="complaints">5</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon green">FE</div>
+                            <div><span class="stat-label">Fees Collected</span><span class="stat-value">Rs.
+                                    9,75,000</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon orange">PP</div>
+                            <div><span class="stat-label">Pending Payments</span><span class="stat-value">12
+                                    Students</span></div>
+                        </article>
                     </div>
                     <div class="dashboard-grid">
                         <article class="dashboard-card">
-                            <div class="card-title"><span>Recent Activities</span><span class="badge-count">Live</span></div>
+                            <div class="card-title"><span>Recent Activities</span><span class="badge-count">Live</span>
+                            </div>
                             <div class="activities-list" data-activity-list>
-                                <div class="activity-item"><div class="activity-badge register">+</div><div><span class="activity-text">New Student Registration</span><p class="activity-desc">Michael Scott registered for Block A Room 204</p><span class="activity-time">5 minutes ago</span></div></div>
-                                <div class="activity-item"><div class="activity-badge allocate">R</div><div><span class="activity-text">Recent Room Allocation</span><p class="activity-desc">Jane Smith allocated to Block B Room 102 (Single)</p><span class="activity-time">20 minutes ago</span></div></div>
-                                <div class="activity-item"><div class="activity-badge complaint">!</div><div><span class="activity-text">Latest Complaint Lodge</span><p class="activity-desc">Room 305 logged plumbing leakage issue</p><span class="activity-time">1 hour ago</span></div></div>
+                                <div class="activity-item">
+                                    <div class="activity-badge register">+</div>
+                                    <div><span class="activity-text">New Student Registration</span>
+                                        <p class="activity-desc">Michael Scott registered for Block A Room 204</p><span
+                                            class="activity-time">5 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-badge allocate">R</div>
+                                    <div><span class="activity-text">Recent Room Allocation</span>
+                                        <p class="activity-desc">Jane Smith allocated to Block B Room 102 (Single)</p>
+                                        <span class="activity-time">20 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-badge complaint">!</div>
+                                    <div><span class="activity-text">Latest Complaint Lodge</span>
+                                        <p class="activity-desc">Room 305 logged plumbing leakage issue</p><span
+                                            class="activity-time">1 hour ago</span>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                         <article class="dashboard-card">
                             <div class="card-title">Quick Actions</div>
                             <div class="quick-actions-grid">
-                                <button class="action-btn open-action-modal" data-modal="add-student-modal">Add Student</button>
-                                <button class="action-btn open-action-modal" data-modal="add-staff-modal">Add Staff</button>
-                                <button class="action-btn open-action-modal" data-modal="allocate-room-modal">Allocate Room</button>
-                                <button class="action-btn open-action-modal" data-modal="complaints-list-modal">View Complaints</button>
-                                <button class="action-btn action-wide open-action-modal" data-modal="report-modal">Generate Report</button>
+                                <button class="action-btn open-action-modal" data-modal="add-student-modal">Add
+                                    Student</button>
+                                <button class="action-btn open-action-modal" data-modal="add-staff-modal">Add
+                                    Staff</button>
+                                <button class="action-btn open-action-modal" data-modal="allocate-room-modal">Allocate
+                                    Room</button>
+                                <button class="action-btn open-action-modal" data-modal="complaints-list-modal">View
+                                    Complaints</button>
+                                <button class="action-btn action-wide open-action-modal"
+                                    data-modal="report-modal">Generate Report</button>
                             </div>
                         </article>
                     </div>
@@ -308,46 +448,102 @@
             <div class="dashboard-topbar">
                 <div class="logo-area"><span class="small-logo">HMS</span><span>Staff Dashboard</span></div>
                 <div class="user-area">
-                    <div class="profile-widget"><div class="avatar">WD</div><div class="profile-info"><span class="profile-name">Warden Sarah</span><span class="profile-role">Hostel Staff Warden</span></div></div>
+                    <div class="profile-widget">
+                        <div class="avatar">WD</div>
+                        <div class="profile-info"><span class="profile-name" id="staff-welcome-name">Welcome Staff</span><span class="profile-role">Hostel Staff Warden</span></div>
+                    </div>
                     <button class="btn-logout-top logout-button">Logout</button>
                 </div>
             </div>
             <div class="dashboard-shell">
                 <aside class="sidebar">
                     <a href="#staff-dashboard" class="sidebar-link active">Dashboard</a>
-                    <button class="sidebar-link open-action-modal" data-modal="add-student-modal">Student Management</button>
-                    <button class="sidebar-link open-action-modal" data-modal="allocate-room-modal">Room Management</button>
+                    <button class="sidebar-link open-action-modal" data-modal="add-student-modal">Student
+                        Management</button>
+                    <button class="sidebar-link open-action-modal" data-modal="allocate-room-modal">Room
+                        Management</button>
                     <button class="sidebar-link open-action-modal" data-modal="report-modal">Fee Management</button>
-                    <button class="sidebar-link open-action-modal" data-modal="complaints-list-modal">Complaint Management</button>
+                    <button class="sidebar-link open-action-modal" data-modal="complaints-list-modal">Complaint
+                        Management</button>
                     <button class="sidebar-logout logout-button">Logout</button>
                 </aside>
                 <div class="main-content">
-                    <div class="page-header"><h2>Staff Dashboard</h2><p>Welcome back, Sarah. Hostel operations under your block are running normally.</p></div>
+                    <div class="page-header">
+                        <h2>Staff Dashboard</h2>
+                        <p id="staff-welcome-msg">Welcome Staff</p>
+                    </div>
                     <div class="stats-grid">
-                        <article class="stat-card"><div class="stat-icon blue">ST</div><div><span class="stat-label">Students Assigned</span><span class="stat-value" data-stat="students">250</span></div></article>
-                        <article class="stat-card"><div class="stat-icon green">OR</div><div><span class="stat-label">Occupied Rooms</span><span class="stat-value" data-stat="occupied">110</span></div></article>
-                        <article class="stat-card"><div class="stat-icon green">AR</div><div><span class="stat-label">Available Rooms</span><span class="stat-value" data-stat="available">10</span></div></article>
-                        <article class="stat-card"><div class="stat-icon orange">NC</div><div><span class="stat-label">New Complaints</span><span class="stat-value">5</span></div></article>
-                        <article class="stat-card"><div class="stat-icon red">PC</div><div><span class="stat-label">Pending Complaints</span><span class="stat-value" data-stat="complaints">5</span></div></article>
-                        <article class="stat-card"><div class="stat-icon blue">RC</div><div><span class="stat-label">Resolved Complaints</span><span class="stat-value">24</span></div></article>
-                        <article class="stat-card"><div class="stat-icon purple">FR</div><div><span class="stat-label">Fee Requests</span><span class="stat-value">15</span></div></article>
-                        <article class="stat-card"><div class="stat-icon blue">MR</div><div><span class="stat-label">Maintenance Requests</span><span class="stat-value">6</span></div></article>
+                        <article class="stat-card">
+                            <div class="stat-icon blue">ST</div>
+                            <div><span class="stat-label">Students Assigned</span><span class="stat-value"
+                                    data-stat="students">250</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon green">OR</div>
+                            <div><span class="stat-label">Occupied Rooms</span><span class="stat-value"
+                                    data-stat="occupied">110</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon green">AR</div>
+                            <div><span class="stat-label">Available Rooms</span><span class="stat-value"
+                                    data-stat="available">10</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon orange">NC</div>
+                            <div><span class="stat-label">New Complaints</span><span class="stat-value">5</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon red">PC</div>
+                            <div><span class="stat-label">Pending Complaints</span><span class="stat-value"
+                                    data-stat="complaints">5</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon blue">RC</div>
+                            <div><span class="stat-label">Resolved Complaints</span><span class="stat-value">24</span>
+                            </div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon purple">FR</div>
+                            <div><span class="stat-label">Fee Requests</span><span class="stat-value">15</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon blue">MR</div>
+                            <div><span class="stat-label">Maintenance Requests</span><span class="stat-value">6</span>
+                            </div>
+                        </article>
                     </div>
                     <div class="dashboard-grid">
                         <article class="dashboard-card">
-                            <div class="card-title"><span>Recent Activities</span><span class="badge-count">Live</span></div>
+                            <div class="card-title"><span>Recent Activities</span><span class="badge-count">Live</span>
+                            </div>
                             <div class="activities-list" data-activity-list>
-                                <div class="activity-item"><div class="activity-badge register">+</div><div><span class="activity-text">New Student Registration</span><p class="activity-desc">Michael Scott registered for Block A Room 204</p><span class="activity-time">5 minutes ago</span></div></div>
-                                <div class="activity-item"><div class="activity-badge allocate">R</div><div><span class="activity-text">Recent Room Allocation</span><p class="activity-desc">Jane Smith allocated to Block B Room 102 (Single)</p><span class="activity-time">20 minutes ago</span></div></div>
+                                <div class="activity-item">
+                                    <div class="activity-badge register">+</div>
+                                    <div><span class="activity-text">New Student Registration</span>
+                                        <p class="activity-desc">Michael Scott registered for Block A Room 204</p><span
+                                            class="activity-time">5 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-badge allocate">R</div>
+                                    <div><span class="activity-text">Recent Room Allocation</span>
+                                        <p class="activity-desc">Jane Smith allocated to Block B Room 102 (Single)</p>
+                                        <span class="activity-time">20 minutes ago</span>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                         <article class="dashboard-card">
                             <div class="card-title">Quick Actions</div>
                             <div class="quick-actions-grid">
-                                <button class="action-btn open-action-modal" data-modal="add-student-modal">Add Student</button>
-                                <button class="action-btn open-action-modal" data-modal="allocate-room-modal">Allocate Room</button>
-                                <button class="action-btn open-action-modal" data-modal="complaints-list-modal">View Complaints</button>
-                                <button class="action-btn open-action-modal" data-modal="report-modal">Generate Report</button>
+                                <button class="action-btn open-action-modal" data-modal="add-student-modal">Add
+                                    Student</button>
+                                <button class="action-btn open-action-modal" data-modal="allocate-room-modal">Allocate
+                                    Room</button>
+                                <button class="action-btn open-action-modal" data-modal="complaints-list-modal">View
+                                    Complaints</button>
+                                <button class="action-btn open-action-modal" data-modal="report-modal">Generate
+                                    Report</button>
                             </div>
                         </article>
                     </div>
@@ -360,7 +556,10 @@
             <div class="dashboard-topbar">
                 <div class="logo-area"><span class="small-logo">HMS</span><span>Student Dashboard</span></div>
                 <div class="user-area">
-                    <div class="profile-widget"><div class="avatar">JD</div><div class="profile-info"><span class="profile-name">John Doe</span><span class="profile-role">Student (Roll #20412)</span></div></div>
+                    <div class="profile-widget">
+                        <div class="avatar">U</div>
+                        <div class="profile-info"><span class="profile-name" id="student-welcome-name">Welcome Student</span><span class="profile-role">Student (Roll #20412)</span></div>
+                    </div>
                     <button class="btn-logout-top logout-button">Logout</button>
                 </div>
             </div>
@@ -368,31 +567,66 @@
                 <aside class="sidebar">
                     <a href="#student-dashboard" class="sidebar-link active">My Dashboard</a>
                     <button class="sidebar-link open-action-modal" data-modal="room-details-modal">Room Details</button>
-                    <button class="sidebar-link open-action-modal" data-modal="fee-ledger-modal">Fees and Payments</button>
+                    <button class="sidebar-link open-action-modal" data-modal="fee-ledger-modal">Fees and
+                        Payments</button>
                     <button class="sidebar-link open-action-modal" data-modal="complaint-modal">Lodge Complaint</button>
                     <button class="sidebar-logout logout-button">Logout</button>
                 </aside>
                 <div class="main-content">
-                    <div class="page-header"><h2>Student Dashboard</h2><p>Welcome, John. View your room details, fees, and report maintenance requests.</p></div>
+                    <div class="page-header">
+                        <h2>Student Dashboard</h2>
+                        <p id="welcome-msg">Welcome Student</p>
+                    </div>
                     <div class="stats-grid student-stats">
-                        <article class="stat-card"><div class="stat-icon blue">RM</div><div><span class="stat-label">Assigned Room</span><span class="stat-value">Block A - 204</span></div></article>
-                        <article class="stat-card"><div class="stat-icon green">FS</div><div><span class="stat-label">Fee Status</span><span class="stat-value">Paid</span></div></article>
-                        <article class="stat-card"><div class="stat-icon red">OC</div><div><span class="stat-label">My Open Complaints</span><span class="stat-value" id="student-complaint-count">1</span></div></article>
-                        <article class="stat-card"><div class="stat-icon orange">OP</div><div><span class="stat-label">Outpass Status</span><span class="stat-value">None Active</span></div></article>
+                        <article class="stat-card">
+                            <div class="stat-icon blue">RM</div>
+                            <div><span class="stat-label">Assigned Room</span><span class="stat-value">Block A -
+                                    204</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon green">FS</div>
+                            <div><span class="stat-label">Fee Status</span><span class="stat-value">Paid</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon red">OC</div>
+                            <div><span class="stat-label">My Open Complaints</span><span class="stat-value"
+                                    id="student-complaint-count">1</span></div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="stat-icon orange">OP</div>
+                            <div><span class="stat-label">Outpass Status</span><span class="stat-value">None
+                                    Active</span></div>
+                        </article>
                     </div>
                     <div class="dashboard-grid">
                         <article class="dashboard-card">
-                            <div class="card-title"><span>My Maintenance Logs</span><span class="badge-count">Active</span></div>
+                            <div class="card-title"><span>My Maintenance Logs</span><span
+                                    class="badge-count">Active</span></div>
                             <div class="activities-list" id="student-complaint-list">
-                                <div class="activity-item"><div class="activity-badge complaint">!</div><div><span class="activity-text">Ceiling fan capacitor noisy</span><p class="activity-desc">Logged on 2026-06-08 - Status: <span class="badge warning">In Progress</span></p><span class="activity-time">Warden dispatched electrician caretaker.</span></div></div>
+                                <div class="activity-item">
+                                    <div class="activity-badge complaint">!</div>
+                                    <div><span class="activity-text">Ceiling fan capacitor noisy</span>
+                                        <p class="activity-desc">Logged on 2026-06-08 - Status: <span
+                                                class="badge warning">In Progress</span></p><span
+                                            class="activity-time">Warden dispatched electrician caretaker.</span>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                         <article class="dashboard-card">
                             <div class="card-title">Lodge a New Complaint</div>
                             <form id="frm-lodge-complaint">
-                                <div class="form-group"><label for="complaint-title">Issue Description</label><input type="text" id="complaint-title" class="form-input" placeholder="e.g. Wi-Fi not working / Leaking pipe" required></div>
-                                <div class="form-group"><label for="complaint-severity">Severity Level</label><select id="complaint-severity" class="form-input"><option value="Low">Low (General Repair)</option><option value="Medium">Medium (Affects daily use)</option><option value="High">High (Emergency)</option></select></div>
-                                <button type="submit" class="btn btn-primary full-width">Lodge Maintenance Request</button>
+                                <div class="form-group"><label for="complaint-title">Issue Description</label><input
+                                        type="text" id="complaint-title" class="form-input"
+                                        placeholder="e.g. Wi-Fi not working / Leaking pipe" required></div>
+                                <div class="form-group"><label for="complaint-severity">Severity Level</label><select
+                                        id="complaint-severity" class="form-input">
+                                        <option value="Low">Low (General Repair)</option>
+                                        <option value="Medium">Medium (Affects daily use)</option>
+                                        <option value="High">High (Emergency)</option>
+                                    </select></div>
+                                <button type="submit" class="btn btn-primary full-width">Lodge Maintenance
+                                    Request</button>
                             </form>
                         </article>
                     </div>
@@ -406,7 +640,8 @@
                 <div>
                     <span class="section-tag">Contact Details</span>
                     <h2 class="section-title">Reach Hostel Office</h2>
-                    <p class="contact-text">Use this form for academic demo enquiries, hostel support, or administrative contact.</p>
+                    <p class="contact-text">Use this form for academic demo enquiries, hostel support, or administrative
+                        contact.</p>
                     <div class="contact-list">
                         <p><span>Phone:</span> +1 (234) 567-8900</p>
                         <p><span>Email:</span> contact@hostelmgmt.com</p>
@@ -414,9 +649,14 @@
                     </div>
                 </div>
                 <form class="contact-form" id="contact-form">
-                    <div class="form-group"><label for="contact-name">Full Name</label><input type="text" id="contact-name" class="form-input" required></div>
-                    <div class="form-group"><label for="contact-email">Email</label><input type="email" id="contact-email" class="form-input" required></div>
-                    <div class="form-group"><label for="contact-message">Message</label><textarea id="contact-message" class="form-input" rows="4" required></textarea></div>
+    <div class="form-grid">
+                    <div class="form-group"><label for="contact-name">Full Name</label><input type="text"
+                            id="contact-name" class="form-input" required></div>
+                    <div class="form-group"><label for="contact-email">Email</label><input type="email"
+                            id="contact-email" class="form-input" required></div>
+                    <div class="form-group"><label for="contact-message">Message</label><textarea id="contact-message"
+                            class="form-input" rows="4" required></textarea></div>
+    </div>
                     <button type="submit" class="btn btn-primary">Submit Message</button>
                 </form>
             </div>
@@ -428,7 +668,8 @@
         <div class="container footer-grid">
             <div class="footer-col">
                 <div class="footer-logo">Hostel Management</div>
-                <p class="footer-desc">A comprehensive residential management platform designed to optimize administrative control and simplify students' hostel lives.</p>
+                <p class="footer-desc">A comprehensive residential management platform designed to optimize
+                    administrative control and simplify students' hostel lives.</p>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
@@ -457,17 +698,40 @@
     <div class="modal" id="student-modal">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Student Registration</h3><p class="modal-desc">Create your hosteller account to apply for hostel rooms.</p></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Student Registration</h3>
+                <p class="modal-desc">Create your hosteller account to apply for hostel rooms.</p>
+            </div>
             <form id="student-reg-form">
-                <div class="form-group"><label for="std-name">Full Name</label><input type="text" id="std-name" class="form-input" placeholder="e.g. John Doe" required></div>
-                <div class="form-group"><label for="std-dob">Date of Birth</label><input type="date" id="std-dob" class="form-input" required></div>
-                <div class="form-group"><label for="std-gender">Gender</label><select id="std-gender" class="form-input" required><option value="" disabled selected>Select your gender...</option><option>Male</option><option>Female</option><option>Other</option></select></div>
-                <div class="form-group"><label for="std-address">Address</label><textarea id="std-address" class="form-input" rows="3" placeholder="Enter your full address" required></textarea></div>
-                <div class="form-group"><label for="std-phone">Phone Number</label><input type="tel" id="std-phone" class="form-input" placeholder="e.g. +1234567890" required></div>
-                <div class="form-group"><label for="std-email">Email</label><input type="email" id="std-email" class="form-input" placeholder="e.g. john.doe@university.edu" required></div>
-                <div class="form-group"><label for="std-room">Room Preference</label><select id="std-room" class="form-input" required><option value="" disabled selected>Select room type...</option><option>Single</option><option>Double</option></select></div>
-                <div class="form-group"><label for="std-pwd">Set Password</label><input type="password" id="std-pwd" class="form-input" placeholder="Min. 8 characters" required></div>
-                <div class="form-group"><label for="std-confirm-pwd">Confirm Password</label><input type="password" id="std-confirm-pwd" class="form-input" placeholder="Confirm your password" required></div>
+    <div class="form-grid">
+                <div class="form-group"><label for="std-name">Full Name</label><input type="text" id="std-name"
+                        class="form-input" placeholder="e.g. John Doe" required></div>
+                <div class="form-group"><label for="std-dob">Date of Birth</label><input type="date" id="std-dob"
+                        class="form-input" required></div>
+                <div class="form-group"><label for="std-gender">Gender</label><select id="std-gender" class="form-input"
+                        required>
+                        <option value="" disabled selected>Select your gender...</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select></div>
+                <div class="form-group"><label for="std-address">Address</label><textarea id="std-address"
+                        class="form-input" rows="3" placeholder="Enter your full address" required></textarea></div>
+                <div class="form-group"><label for="std-phone">Phone Number</label><input type="tel" id="std-phone"
+                        class="form-input" placeholder="e.g. +1234567890" required></div>
+                <div class="form-group"><label for="std-email">Email</label><input type="email" id="std-email"
+                        class="form-input" placeholder="e.g. john.doe@university.edu" required></div>
+                <div class="form-group"><label for="std-room">Room Preference</label><select id="std-room"
+                        class="form-input" required>
+                        <option value="" disabled selected>Select room type...</option>
+                        <option>Single</option>
+                        <option>Double</option>
+                    </select></div>
+                <div class="form-group"><label for="std-pwd">Set Password</label><input type="password" id="std-pwd"
+                        class="form-input" placeholder="Min. 8 characters" required></div>
+                <div class="form-group"><label for="std-confirm-pwd">Confirm Password</label><input type="password"
+                        id="std-confirm-pwd" class="form-input" placeholder="Confirm your password" required></div>
+    </div>
                 <button type="submit" class="btn btn-primary full-width">Register</button>
             </form>
         </div>
@@ -476,17 +740,37 @@
     <div class="modal" id="staff-modal">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Staff Registration</h3><p class="modal-desc">Register as warden, admin, or support staff helper.</p></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Staff Registration</h3>
+                <p class="modal-desc">Register as warden, admin, or support staff helper.</p>
+            </div>
             <form id="staff-reg-form">
-                <div class="form-group"><label for="stf-name">Full Name</label><input type="text" id="stf-name" class="form-input" placeholder="e.g. Dr. Sarah Jenkins" required></div>
-                <div class="form-group"><label for="stf-dob">Date of Birth</label><input type="date" id="stf-dob" class="form-input" required></div>
-                <div class="form-group"><label for="stf-gender">Gender</label><select id="stf-gender" class="form-input" required><option value="" disabled selected>Select your gender...</option><option>Male</option><option>Female</option><option>Other</option></select></div>
-                <div class="form-group"><label for="stf-address">Address</label><textarea id="stf-address" class="form-input" rows="3" placeholder="Enter your full address" required></textarea></div>
-                <div class="form-group"><label for="stf-phone">Phone Number</label><input type="tel" id="stf-phone" class="form-input" placeholder="e.g. +1234567890" required></div>
-                <div class="form-group"><label for="stf-email">Email</label><input type="email" id="stf-email" class="form-input" placeholder="e.g. sjenkins@hostel.edu" required></div>
-                <div class="form-group"><label for="stf-designation">Designation</label><input type="text" id="stf-designation" class="form-input" placeholder="e.g. Hostel Warden / Accountant" required></div>
-                <div class="form-group"><label for="stf-pwd">Set Password</label><input type="password" id="stf-pwd" class="form-input" placeholder="Min. 8 characters" required></div>
-                <div class="form-group"><label for="stf-confirm-pwd">Confirm Password</label><input type="password" id="stf-confirm-pwd" class="form-input" placeholder="Confirm your password" required></div>
+    <div class="form-grid">
+                <div class="form-group"><label for="stf-name">Full Name</label><input type="text" id="stf-name"
+                        class="form-input" placeholder="e.g. Dr. Sarah Jenkins" required></div>
+                <div class="form-group"><label for="stf-dob">Date of Birth</label><input type="date" id="stf-dob"
+                        class="form-input" required></div>
+                <div class="form-group"><label for="stf-gender">Gender</label><select id="stf-gender" class="form-input"
+                        required>
+                        <option value="" disabled selected>Select your gender...</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select></div>
+                <div class="form-group"><label for="stf-address">Address</label><textarea id="stf-address"
+                        class="form-input" rows="3" placeholder="Enter your full address" required></textarea></div>
+                <div class="form-group"><label for="stf-phone">Phone Number</label><input type="tel" id="stf-phone"
+                        class="form-input" placeholder="e.g. +1234567890" required></div>
+                <div class="form-group"><label for="stf-email">Email</label><input type="email" id="stf-email"
+                        class="form-input" placeholder="e.g. sjenkins@hostel.edu" required></div>
+                <div class="form-group"><label for="stf-designation">Designation</label><input type="text"
+                        id="stf-designation" class="form-input" placeholder="e.g. Hostel Warden / Accountant" required>
+                </div>
+                <div class="form-group"><label for="stf-pwd">Set Password</label><input type="password" id="stf-pwd"
+                        class="form-input" placeholder="Min. 8 characters" required></div>
+                <div class="form-group"><label for="stf-confirm-pwd">Confirm Password</label><input type="password"
+                        id="stf-confirm-pwd" class="form-input" placeholder="Confirm your password" required></div>
+    </div>
                 <button type="submit" class="btn btn-primary full-width">Register</button>
             </form>
         </div>
@@ -495,30 +779,119 @@
     <div class="modal" id="staff-mgmt-modal">
         <div class="modal-content modal-wide">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Staff Management Panel</h3><p class="modal-desc">Overview of active hostel administration and warden staff.</p></div>
-            <div class="table-wrap"><table class="mgmt-table"><thead><tr><th>Name</th><th>Designation</th><th>Email</th><th>Status</th></tr></thead><tbody><tr><td>Dr. Sarah Jenkins</td><td>Hostel Warden</td><td>sjenkins@hostel.edu</td><td><span class="badge success">Active</span></td></tr><tr><td>Mr. Robert Vance</td><td>Caretaker</td><td>rvance@hostel.edu</td><td><span class="badge success">Active</span></td></tr><tr><td>Mrs. Angela Martin</td><td>Accounts Manager</td><td>amartin@hostel.edu</td><td><span class="badge warning">On Leave</span></td></tr></tbody></table></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Staff Management Panel</h3>
+                <p class="modal-desc">Overview of active hostel administration and warden staff.</p>
+            </div>
+            <div class="table-wrap">
+                <table class="mgmt-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Designation</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dr. Sarah Jenkins</td>
+                            <td>Hostel Warden</td>
+                            <td>sjenkins@hostel.edu</td>
+                            <td><span class="badge success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mr. Robert Vance</td>
+                            <td>Caretaker</td>
+                            <td>rvance@hostel.edu</td>
+                            <td><span class="badge success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mrs. Angela Martin</td>
+                            <td>Accounts Manager</td>
+                            <td>amartin@hostel.edu</td>
+                            <td><span class="badge warning">On Leave</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <div class="modal" id="student-mgmt-modal">
         <div class="modal-content modal-wide">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Student Database Panel</h3><p class="modal-desc">Overview of active student hostellers and their details.</p></div>
-            <div class="table-wrap"><table class="mgmt-table"><thead><tr><th>Student</th><th>Room</th><th>Phone</th><th>Status</th></tr></thead><tbody><tr><td>John Doe</td><td>Room 102 (Single)</td><td>+1 234 567 8900</td><td><span class="badge success">Checked In</span></td></tr><tr><td>Jane Smith</td><td>Room 204 (Double)</td><td>+1 987 654 3210</td><td><span class="badge success">Checked In</span></td></tr><tr><td>Michael Scott</td><td>Room 305 (Single)</td><td>+1 555 019 9283</td><td><span class="badge danger">Checked Out</span></td></tr></tbody></table></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Student Database Panel</h3>
+                <p class="modal-desc">Overview of active student hostellers and their details.</p>
+            </div>
+            <div class="table-wrap">
+                <table class="mgmt-table">
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Room</th>
+                            <th>Phone</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Room 102 (Single)</td>
+                            <td>+1 234 567 8900</td>
+                            <td><span class="badge success">Checked In</span></td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>Room 204 (Double)</td>
+                            <td>+1 987 654 3210</td>
+                            <td><span class="badge success">Checked In</span></td>
+                        </tr>
+                        <tr>
+                            <td>Michael Scott</td>
+                            <td>Room 305 (Single)</td>
+                            <td>+1 555 019 9283</td>
+                            <td><span class="badge danger">Checked Out</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <div class="modal" id="room-mgmt-modal">
         <div class="modal-content modal-wide">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Room and Allocation Status</h3><p class="modal-desc">Real-time status of hostel blocks and occupancy details.</p></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Room and Allocation Status</h3>
+                <p class="modal-desc">Real-time status of hostel blocks and occupancy details.</p>
+            </div>
             <div class="room-grid-layout">
-                <div class="room-card occupied"><h4>Room 101</h4><p>Single - Occupied</p></div>
-                <div class="room-card available"><h4>Room 102</h4><p>Single - Available</p></div>
-                <div class="room-card occupied"><h4>Room 103</h4><p>Double - Occupied</p></div>
-                <div class="room-card available"><h4>Room 104</h4><p>Double - Available</p></div>
-                <div class="room-card maintenance"><h4>Room 105</h4><p>Single - Cleaning</p></div>
-                <div class="room-card available"><h4>Room 106</h4><p>Double - Available</p></div>
+                <div class="room-card occupied">
+                    <h4>Room 101</h4>
+                    <p>Single - Occupied</p>
+                </div>
+                <div class="room-card available">
+                    <h4>Room 102</h4>
+                    <p>Single - Available</p>
+                </div>
+                <div class="room-card occupied">
+                    <h4>Room 103</h4>
+                    <p>Double - Occupied</p>
+                </div>
+                <div class="room-card available">
+                    <h4>Room 104</h4>
+                    <p>Double - Available</p>
+                </div>
+                <div class="room-card maintenance">
+                    <h4>Room 105</h4>
+                    <p>Single - Cleaning</p>
+                </div>
+                <div class="room-card available">
+                    <h4>Room 106</h4>
+                    <p>Double - Available</p>
+                </div>
             </div>
         </div>
     </div>
@@ -526,27 +899,105 @@
     <div class="modal" id="fee-mgmt-modal">
         <div class="modal-content modal-wide">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Fee Ledger and Payments</h3><p class="modal-desc">Track pending invoices and transaction status.</p></div>
-            <div class="table-wrap"><table class="mgmt-table"><thead><tr><th>Invoice ID</th><th>Student</th><th>Amount</th><th>Status</th></tr></thead><tbody><tr><td>#INV-2026-001</td><td>John Doe</td><td>$1,200.00</td><td><span class="badge success">Paid</span></td></tr><tr><td>#INV-2026-002</td><td>Jane Smith</td><td>$800.00</td><td><span class="badge success">Paid</span></td></tr><tr><td>#INV-2026-003</td><td>Michael Scott</td><td>$1,200.00</td><td><span class="badge warning">Pending</span></td></tr></tbody></table></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Fee Ledger and Payments</h3>
+                <p class="modal-desc">Track pending invoices and transaction status.</p>
+            </div>
+            <div class="table-wrap">
+                <table class="mgmt-table">
+                    <thead>
+                        <tr>
+                            <th>Invoice ID</th>
+                            <th>Student</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#INV-2026-001</td>
+                            <td>John Doe</td>
+                            <td>$1,200.00</td>
+                            <td><span class="badge success">Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td>#INV-2026-002</td>
+                            <td>Jane Smith</td>
+                            <td>$800.00</td>
+                            <td><span class="badge success">Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td>#INV-2026-003</td>
+                            <td>Michael Scott</td>
+                            <td>$1,200.00</td>
+                            <td><span class="badge warning">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <div class="modal" id="complaint-mgmt-modal">
         <div class="modal-content modal-wide">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Support and Maintenance Tickets</h3><p class="modal-desc">Review and update pending maintenance requests.</p></div>
-            <div class="table-wrap"><table class="mgmt-table"><thead><tr><th>Ticket</th><th>Room</th><th>Issue</th><th>Status</th></tr></thead><tbody><tr><td>#TCK-482</td><td>Room 102</td><td>Leaking faucet</td><td><span class="badge danger">Open</span></td></tr><tr><td>#TCK-485</td><td>Room 204</td><td>Wi-Fi disconnects</td><td><span class="badge warning">In Progress</span></td></tr><tr><td>#TCK-486</td><td>Room 103</td><td>Broken study lamp</td><td><span class="badge success">Resolved</span></td></tr></tbody></table></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Support and Maintenance Tickets</h3>
+                <p class="modal-desc">Review and update pending maintenance requests.</p>
+            </div>
+            <div class="table-wrap">
+                <table class="mgmt-table">
+                    <thead>
+                        <tr>
+                            <th>Ticket</th>
+                            <th>Room</th>
+                            <th>Issue</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#TCK-482</td>
+                            <td>Room 102</td>
+                            <td>Leaking faucet</td>
+                            <td><span class="badge danger">Open</span></td>
+                        </tr>
+                        <tr>
+                            <td>#TCK-485</td>
+                            <td>Room 204</td>
+                            <td>Wi-Fi disconnects</td>
+                            <td><span class="badge warning">In Progress</span></td>
+                        </tr>
+                        <tr>
+                            <td>#TCK-486</td>
+                            <td>Room 103</td>
+                            <td>Broken study lamp</td>
+                            <td><span class="badge success">Resolved</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <div class="modal" id="add-student-modal">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Add Student</h3><p class="modal-desc">Register a new student directly into the system database.</p></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Add Student</h3>
+                <p class="modal-desc">Register a new student directly into the system database.</p>
+            </div>
             <form id="frm-add-student">
-                <div class="form-group"><label for="new-std-name">Full Name</label><input type="text" id="new-std-name" class="form-input" placeholder="e.g. Jim Halpert" required></div>
-                <div class="form-group"><label for="new-std-email">Email Address</label><input type="email" id="new-std-email" class="form-input" placeholder="e.g. jim@university.edu" required></div>
-                <div class="form-group"><label for="new-std-room">Room Preference</label><select id="new-std-room" class="form-input" required><option>Block A Room 102 (Single)</option><option>Block B Room 204 (Double)</option><option>Block C Room 301 (Single)</option></select></div>
+                <div class="form-group"><label for="new-std-name">Full Name</label><input type="text" id="new-std-name"
+                        class="form-input" placeholder="e.g. Jim Halpert" required></div>
+                <div class="form-group"><label for="new-std-email">Email Address</label><input type="email"
+                        id="new-std-email" class="form-input" placeholder="e.g. jim@university.edu" required></div>
+                <div class="form-group"><label for="new-std-room">Room Preference</label><select id="new-std-room"
+                        class="form-input" required>
+                        <option>Block A Room 102 (Single)</option>
+                        <option>Block B Room 204 (Double)</option>
+                        <option>Block C Room 301 (Single)</option>
+                    </select></div>
                 <button type="submit" class="btn btn-primary full-width">Add Student</button>
             </form>
         </div>
@@ -555,11 +1006,17 @@
     <div class="modal" id="add-staff-modal">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Add Staff Member</h3><p class="modal-desc">Add a new warden, accountant, or caretaker.</p></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Add Staff Member</h3>
+                <p class="modal-desc">Add a new warden, accountant, or caretaker.</p>
+            </div>
             <form id="frm-add-staff">
-                <div class="form-group"><label for="new-stf-name">Full Name</label><input type="text" id="new-stf-name" class="form-input" placeholder="e.g. Angela Martin" required></div>
-                <div class="form-group"><label for="new-stf-role">Designation</label><input type="text" id="new-stf-role" class="form-input" placeholder="e.g. Accounts Warden" required></div>
-                <div class="form-group"><label for="new-stf-email">Email Address</label><input type="email" id="new-stf-email" class="form-input" placeholder="e.g. angela@hostel.edu" required></div>
+                <div class="form-group"><label for="new-stf-name">Full Name</label><input type="text" id="new-stf-name"
+                        class="form-input" placeholder="e.g. Angela Martin" required></div>
+                <div class="form-group"><label for="new-stf-role">Designation</label><input type="text"
+                        id="new-stf-role" class="form-input" placeholder="e.g. Accounts Warden" required></div>
+                <div class="form-group"><label for="new-stf-email">Email Address</label><input type="email"
+                        id="new-stf-email" class="form-input" placeholder="e.g. angela@hostel.edu" required></div>
                 <button type="submit" class="btn btn-primary full-width">Add Staff</button>
             </form>
         </div>
@@ -568,10 +1025,19 @@
     <div class="modal" id="allocate-room-modal">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Allocate Room</h3><p class="modal-desc">Assign Block, Room, and Bed numbers to hostellers.</p></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Allocate Room</h3>
+                <p class="modal-desc">Assign Block, Room, and Bed numbers to hostellers.</p>
+            </div>
             <form id="frm-allocate">
-                <div class="form-group"><label for="alloc-name">Student Name</label><input type="text" id="alloc-name" class="form-input" placeholder="e.g. Pam Beesly" required></div>
-                <div class="form-group"><label for="alloc-block">Block / Room Selection</label><select id="alloc-block" class="form-input" required><option>Block A Room 103 (Single)</option><option>Block B Room 104 (Double)</option><option>Block C Room 105 (Single)</option></select></div>
+                <div class="form-group"><label for="alloc-name">Student Name</label><input type="text" id="alloc-name"
+                        class="form-input" placeholder="e.g. Pam Beesly" required></div>
+                <div class="form-group"><label for="alloc-block">Block / Room Selection</label><select id="alloc-block"
+                        class="form-input" required>
+                        <option>Block A Room 103 (Single)</option>
+                        <option>Block B Room 104 (Double)</option>
+                        <option>Block C Room 105 (Single)</option>
+                    </select></div>
                 <button type="submit" class="btn btn-primary full-width">Confirm Allocation</button>
             </form>
         </div>
@@ -580,16 +1046,58 @@
     <div class="modal" id="complaints-list-modal">
         <div class="modal-content modal-wide">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Active Complaints List</h3><p class="modal-desc">Track and resolve complaints reported by student hostellers.</p></div>
-            <div class="table-wrap"><table class="mgmt-table"><thead><tr><th>Room</th><th>Issue Description</th><th>Severity</th><th>Action</th></tr></thead><tbody id="tbl-complaints-body"><tr id="row-c1"><td>Room 305</td><td>Plumbing leak under washbasin</td><td><span class="badge danger">High</span></td><td><button class="mini-btn resolve-btn" data-row="row-c1">Resolve</button></td></tr><tr id="row-c2"><td>Room 102</td><td>Wi-Fi routing drops continuously</td><td><span class="badge warning">Medium</span></td><td><button class="mini-btn resolve-btn" data-row="row-c2">Resolve</button></td></tr><tr id="row-c3"><td>Room 204</td><td>Ceiling fan capacitor noisy</td><td><span class="badge success">Low</span></td><td><button class="mini-btn resolve-btn" data-row="row-c3">Resolve</button></td></tr></tbody></table></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Active Complaints List</h3>
+                <p class="modal-desc">Track and resolve complaints reported by student hostellers.</p>
+            </div>
+            <div class="table-wrap">
+                <table class="mgmt-table">
+                    <thead>
+                        <tr>
+                            <th>Room</th>
+                            <th>Issue Description</th>
+                            <th>Severity</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl-complaints-body">
+                        <tr id="row-c1">
+                            <td>Room 305</td>
+                            <td>Plumbing leak under washbasin</td>
+                            <td><span class="badge danger">High</span></td>
+                            <td><button class="mini-btn resolve-btn" data-row="row-c1">Resolve</button></td>
+                        </tr>
+                        <tr id="row-c2">
+                            <td>Room 102</td>
+                            <td>Wi-Fi routing drops continuously</td>
+                            <td><span class="badge warning">Medium</span></td>
+                            <td><button class="mini-btn resolve-btn" data-row="row-c2">Resolve</button></td>
+                        </tr>
+                        <tr id="row-c3">
+                            <td>Room 204</td>
+                            <td>Ceiling fan capacitor noisy</td>
+                            <td><span class="badge success">Low</span></td>
+                            <td><button class="mini-btn resolve-btn" data-row="row-c3">Resolve</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <div class="modal" id="report-modal">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Generate Report</h3><p class="modal-desc">Export systemic database parameters to physical media.</p></div>
-            <div class="form-group"><label for="report-type">Report Configuration</label><select id="report-type" class="form-input"><option>Full Hostel Audit Report (PDF)</option><option>Outstanding Fee Ledgers (Excel)</option><option>Room Allocations and Status List</option></select></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Generate Report</h3>
+                <p class="modal-desc">Export systemic database parameters to physical media.</p>
+            </div>
+            <div class="form-group"><label for="report-type">Report Configuration</label><select id="report-type"
+                    class="form-input">
+                    <option>Full Hostel Audit Report (PDF)</option>
+                    <option>Outstanding Fee Ledgers (Excel)</option>
+                    <option>Room Allocations and Status List</option>
+                </select></div>
             <button class="btn btn-primary full-width" id="download-report">Download Report</button>
         </div>
     </div>
@@ -597,25 +1105,66 @@
     <div class="modal" id="room-details-modal">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Room Allocation Specifications</h3><p class="modal-desc">Details regarding your allocated hostel quarters.</p></div>
-            <div class="detail-list"><p><span>Block</span><strong>Block A</strong></p><p><span>Room Number</span><strong>Room 204</strong></p><p><span>Configuration</span><strong>Double Sharing</strong></p><p><span>Roommate</span><strong>Michael Scott</strong></p></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Room Allocation Specifications</h3>
+                <p class="modal-desc">Details regarding your allocated hostel quarters.</p>
+            </div>
+            <div class="detail-list">
+                <p><span>Block</span><strong>Block A</strong></p>
+                <p><span>Room Number</span><strong>Room 204</strong></p>
+                <p><span>Configuration</span><strong>Double Sharing</strong></p>
+                <p><span>Roommate</span><strong>Michael Scott</strong></p>
+            </div>
         </div>
     </div>
 
     <div class="modal" id="fee-ledger-modal">
         <div class="modal-content modal-wide">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">My Fee Statement</h3><p class="modal-desc">Billing history and pending transactions for your ledger.</p></div>
-            <div class="table-wrap"><table class="mgmt-table"><thead><tr><th>Bill ID</th><th>Description</th><th>Amount</th><th>Status</th></tr></thead><tbody><tr><td>#INV-2026-928</td><td>Hostel Fee (Spring 2026)</td><td>$1,200.00</td><td><span class="badge success">Paid</span></td></tr><tr><td>#INV-2026-441</td><td>Mess Charges (May 2026)</td><td>$180.00</td><td><span class="badge success">Paid</span></td></tr></tbody></table></div>
+            <div class="modal-header">
+                <h3 class="modal-title">My Fee Statement</h3>
+                <p class="modal-desc">Billing history and pending transactions for your ledger.</p>
+            </div>
+            <div class="table-wrap">
+                <table class="mgmt-table">
+                    <thead>
+                        <tr>
+                            <th>Bill ID</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#INV-2026-928</td>
+                            <td>Hostel Fee (Spring 2026)</td>
+                            <td>$1,200.00</td>
+                            <td><span class="badge success">Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td>#INV-2026-441</td>
+                            <td>Mess Charges (May 2026)</td>
+                            <td>$180.00</td>
+                            <td><span class="badge success">Paid</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <div class="modal" id="complaint-modal">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-header"><h3 class="modal-title">Submit Complaint</h3><p class="modal-desc">Submit a maintenance ticket directly to the warden office.</p></div>
+            <div class="modal-header">
+                <h3 class="modal-title">Submit Complaint</h3>
+                <p class="modal-desc">Submit a maintenance ticket directly to the warden office.</p>
+            </div>
             <form id="frm-lodge-modal">
-                <div class="form-group"><label for="modal-complaint-title">Description of Issue</label><input type="text" id="modal-complaint-title" class="form-input" placeholder="e.g. Broken study light bulb" required></div>
+                <div class="form-group"><label for="modal-complaint-title">Description of Issue</label><input
+                        type="text" id="modal-complaint-title" class="form-input"
+                        placeholder="e.g. Broken study light bulb" required></div>
                 <button type="submit" class="btn btn-primary full-width">Lodge Ticket</button>
             </form>
         </div>

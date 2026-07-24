@@ -109,15 +109,126 @@ document.addEventListener('DOMContentLoaded', () => {
         if (role === 'admin') emailInput.placeholder = 'e.g. admin@hostel.edu';
     });
 
-    document.getElementById('login-form')?.addEventListener('submit', (event) => {
+    // ── Utility: extract a friendly display name from an email ──────────────
+    const getFriendlyName = (email) => {
+        const prefix = email.split('@')[0];
+        return prefix.replace(/[._]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    };
+
+    // ── Update dashboard UI placeholders for the logged-in user ─────────────
+    const applyUserToUI = (role, username) => {
+
+        if (role === 'student') {
+
+            const nameEl = document.getElementById('student-welcome-name');
+            const msgEl = document.getElementById('welcome-msg');
+            const avatarEl = document.querySelector('#student-dashboard .avatar');
+
+            if (nameEl) nameEl.textContent = username;
+            if (msgEl) msgEl.textContent = `${username} | Student`;
+            if (avatarEl) avatarEl.textContent = username.charAt(0).toUpperCase();
+
+        }
+
+        else if (role === 'staff') {
+
+            const nameEl = document.getElementById('staff-welcome-name');
+            const msgEl = document.getElementById('staff-welcome-msg');
+            const avatarEl = document.querySelector('#staff-dashboard .avatar');
+
+            if (nameEl) nameEl.textContent = username;
+            if (msgEl) msgEl.textContent = `${username} | Staff`;
+            if (avatarEl) avatarEl.textContent = username.charAt(0).toUpperCase();
+
+        }
+
+        else if (role === 'admin') {
+
+            const nameEl = document.querySelector('#admin-dashboard .profile-name');
+            const roleEl = document.querySelector('#admin-dashboard .profile-role');
+
+            if (nameEl) nameEl.textContent = username;
+            if (roleEl) roleEl.textContent = 'Administrator';
+        }
+    };
+
+    // ── Restore session from Local Storage on page load ──────────────────────
+    const restoreUser = () => {
+        const saved = JSON.parse(localStorage.getItem('hmsUser') || 'null');
+        if (saved) applyUserToUI(saved.role, saved.username);
+    };
+    restoreUser();
+
+    // ── Generic login handler (works for both the section form and modal form) ─
+    const handleLogin = (roleId, emailId, pwdId, sourceModal) => (event) => {
         event.preventDefault();
-        const role = document.getElementById('login-role').value;
+        const role = document.getElementById(roleId)?.value;
+        const email = document.getElementById(emailId)?.value.trim();
+        const password = document.getElementById(pwdId)?.value;
+
+        if (!role || !email || !password) {
+            showToast('Please fill in role, email and password.');
+            return;
+        }
+
+        const username = getFriendlyName(email);
+        localStorage.setItem('hmsUser', JSON.stringify({ role, username }));
+        applyUserToUI(role, username);
+
+        // Close modal if this form lives inside one
+        if (sourceModal) {
+            closeModal(sourceModal);
+        }
+
+        // Scroll to the correct dashboard
         const target = document.getElementById(`${role}-dashboard`);
         if (target) {
             target.scrollIntoView({ behavior: 'smooth' });
-            showToast(`${role.toUpperCase()} login successful. Dashboard opened.`);
+            showToast(`${role.charAt(0).toUpperCase() + role.slice(1)} login successful. Dashboard opened.`);
         }
+    };
+
+    // Attach to the section login form (ids: login-role, login-email, login-pwd)
+    document.getElementById('login-form')?.addEventListener('submit',
+        handleLogin('login-role', 'login-email', 'login-pwd', null)
+    );
+
+    // Attach to the modal login form (ids: modal-login-role, modal-login-email, modal-login-pwd)
+    const loginModal = document.getElementById('login-modal');
+    document.getElementById('modal-login-form')?.addEventListener('submit',
+        handleLogin('modal-login-role', 'modal-login-email', 'modal-login-pwd', loginModal)
+    );
+
+    // Forgot-password buttons (both forms)
+    document.getElementById('forgot-password')?.addEventListener('click', () =>
+        showToast('Password reset link has been sent to your university email.')
+    );
+    document.getElementById('modal-forgot-password')?.addEventListener('click', () =>
+        showToast('Password reset link has been sent to your university email.')
+    );
+
+    // Role change → update email placeholder (section form)
+    document.getElementById('login-role')?.addEventListener('change', (event) => {
+        const emailInput = document.getElementById('login-email');
+        if (!emailInput) return;
+        const role = event.target.value;
+        if (role === 'student') emailInput.placeholder = 'e.g. john.doe@university.edu';
+        if (role === 'staff') emailInput.placeholder = 'e.g. employeeId@hostel.edu';
+        if (role === 'admin') emailInput.placeholder = 'e.g. admin@hostel.edu';
     });
+
+    // Role change → update email placeholder (modal form)
+    document.getElementById('modal-login-role')?.addEventListener('change', (event) => {
+        const emailInput = document.getElementById('modal-login-email');
+        if (!emailInput) return;
+        const role = event.target.value;
+        if (role === 'student') emailInput.placeholder = 'e.g. john.doe@university.edu';
+        if (role === 'staff') emailInput.placeholder = 'e.g. employeeId@hostel.edu';
+        if (role === 'admin') emailInput.placeholder = 'e.g. admin@hostel.edu';
+    });
+
+
+
 
     document.getElementById('student-reg-form')?.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -242,6 +353,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.logout-button').forEach((button) => {
         button.addEventListener('click', () => {
+            // Clear stored credentials
+            localStorage.removeItem('hmsUser');
+            // Reset placeholders to generic values
+            const sName = document.getElementById('student-welcome-name');
+            const sMsg = document.getElementById('welcome-msg');
+            if (sName) sName.textContent = 'Welcome Student';
+            if (sMsg) sMsg.textContent = 'Welcome Student';
+            const studentAvatar = document.querySelector('#student-dashboard .avatar');
+            if (studentAvatar) studentAvatar.textContent = 'U';
+            const sRole = sName?.nextElementSibling;
+            if (sRole) sRole.textContent = 'Student';
+
+            const stName = document.getElementById('staff-welcome-name');
+            const stMsg = document.getElementById('staff-welcome-msg');
+            if (stName) stName.textContent = 'Welcome Staff';
+            if (stMsg) stMsg.textContent = 'Welcome Staff';
+            const staffAvatar = document.querySelector('#staff-dashboard .avatar');
+            if (staffAvatar) staffAvatar.textContent = 'WD';
+            const stRole = stName?.nextElementSibling;
+            if (stRole) stRole.textContent = 'Staff';
+
             document.getElementById('login')?.scrollIntoView({ behavior: 'smooth' });
             showToast('Logged out successfully.');
         });
