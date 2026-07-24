@@ -1,0 +1,16 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "Arjun Sharma",
+      "age": 20,
+      "gender": "Male",
+      "course": "B.Tech",
+      "department": "Computer Science",
+      "roomNumber": "A-101",
+      "phone": "9876543210",
+      "email": "arjun.sharma@college.edu"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
