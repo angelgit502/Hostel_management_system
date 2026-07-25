@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Management System - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <!-- Shared Navbar -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-12h1m-1 4h1m-1 4h1M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+                </svg>
+                Hostel Management
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#modules" class="nav-link">Modules</a></li>
+                    <li><a href="register.html" class="nav-link">Register</a></li>
+                    <li><a href="login.html" class="nav-link">Login</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero page-section" id="home">
+            <div class="container hero-content">
+                <span class="section-tag">Academic Hostel Project</span>
+                <h1 class="hero-title"><span>Hostel Management</span> System</h1>
+                <p class="hero-desc">
+                    Welcome to a simple and efficient solution for managing hostel operations, room allocation,
+                    fees, complaints, and staff records in one organized interface.
+                </p>
+                <div class="hero-buttons">
+                    <a href="register.html" class="btn btn-primary">Get Started</a>
+                    <a href="login.html" class="btn btn-secondary">Login Portal</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Options -->
+        <section class="section-block" id="get-started">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Portal Registration</span>
+                    <h2 class="section-title">Get Started Today</h2>
+                </div>
+
+                <div class="registration-grid">
+                    <article class="registration-card">
+                        <div class="icon-placeholder">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+                            </svg>
+                        </div>
+                        <h3>Student Registration</h3>
+                        <p>Register as a hosteller to apply for rooms, check fee invoices, file complaints, and view
+                            hostel announcements.</p>
+                        <a href="register.html?type=student" class="btn btn-primary">Register as Student</a>
+                    </article>
+
+                    <article class="registration-card">
+                        <div class="icon-placeholder">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                            </svg>
+                        </div>
+                        <h3>Staff Registration</h3>
+                        <p>Register as a warden or administrator to manage room allocation, reports, leaves, and student
+                            complaints.</p>
+                        <a href="register.html?type=staff" class="btn btn-primary">Register as Staff</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section-block" id="about">
+            <div class="container about-layout">
+                <div class="about-content">
+                    <span class="section-tag">About HMS</span>
+                    <h2 class="section-title">Simplifying Hostel Operations</h2>
+                    <p>
+                        Hostel Management System is designed to bring <span class="highlight-text">efficiency</span>,
+                        <span class="highlight-text">clarity</span>, and <span
+                            class="highlight-text">transparency</span>
+                        to college residential management.
+                    </p>
+                    <p>
+                        The system replaces manual registers and spreadsheets with an intuitive dashboard for room
+                        allocation, student records, staff details, fee tracking, and complaint handling.
+                    </p>
+                    <div class="mission-card">
+                        <h3>Mission and Objectives</h3>
+                        <ul class="check-list">
+                            <li><span>Accuracy:</span> Reduce duplicate profiles and incorrect room reports.</li>
+                            <li><span>Transparency:</span> Keep fee receipts and complaint progress easy to track.</li>
+                            <li><span>Security:</span> Use role-based access for students, staff, and admins.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="about-visual">
+                    <div class="visual-card highlight">
+                        <div class="stat">500+</div>
+                        <div class="label">Hostel Students</div>
+                    </div>
+                    <div class="visual-card">
+                        <div class="stat">150+</div>
+                        <div class="label">Total Rooms</div>
+                    </div>
+                    <div class="visual-card">
+                        <div class="stat">7</div>
+                        <div class="label">Core Modules</div>
+                    </div>
+                    <div class="visual-card highlight">
+                        <div class="stat">99%</div>
+                        <div class="label">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section-block" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Feature Highlights</span>
+                    <h2 class="section-title">FEATURES</h2>
+                </div>
+
+                <div class="features-grid">
+                    <a href="staff-management.html" class="feature-card">
+                        <div class="feature-icon"><svg viewBox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                            </svg></div>
+                        <div class="feature-info">
+                            <h3>Staff Management</h3>
+                            <p>Maintain digital profiles of wardens, helpers, security, and housekeepers.</p>
+                        </div>
+                    </a>
+
+                    <a href="student-management.html" class="feature-card">
+                        <div class="feature-icon"><svg viewBox="0 0 24 24">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                            </svg></div>
+                        <div class="feature-info">
+                            <h3>Student Management</h3>
+                            <p>Track student profiles, check-in status, room keys, and contact details.</p>
+                        </div>
+                    </a>
+
+                    <a href="room-management.html" class="feature-card">
+                        <div class="feature-icon"><svg viewBox="0 0 24 24">
+                                <path d="M2 4v16M2 20h20M22 14v6M2 14h20" />
+                            </svg></div>
+                        <div class="feature-info">
+                            <h3>Room and Allocation</h3>
+                            <p>Monitor room configurations, occupancy statistics, and block assignments.</p>
+                        </div>
+                    </a>
+
+                    <a href="payment-management.html" class="feature-card">
+                        <div class="feature-icon"><svg viewBox="0 0 24 24">
+                                <rect x="1" y="4" width="22" height="16" rx="2" />
+                                <line x1="1" y1="10" x2="23" y2="10" />
+                            </svg></div>
+                        <div class="feature-info">
+                            <h3>Fee Management</h3>
+                            <p>Generate bills, record payment transactions, and track outstanding balances.</p>
+                        </div>
+                    </a>
+
+                    <a href="complaint-management.html" class="feature-card">
+                        <div class="feature-icon"><svg viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg></div>
+                        <div class="feature-info">
+                            <h3>Complaint Management</h3>
+                            <p>Review filed complaints, dispatch staff, and update ticket progress.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modules Section -->
+        <section class="section-block" id="modules">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Core Modules</span>
+                    <h2 class="section-title">Dashboard-Style Modules</h2>
+                </div>
+
+                <div class="modules-grid">
+                    <article class="module-card"><span class="module-number">01</span>
+                        <h3>Student Management</h3>
+                        <p>Student records, hostel applications, room status, and contact information.</p>
+                    </article>
+                    <article class="module-card"><span class="module-number">02</span>
+                        <h3>Staff Management</h3>
+                        <p>Warden, caretaker, account staff, and support team profiles.</p>
+                    </article>
+                    <article class="module-card"><span class="module-number">03</span>
+                        <h3>Room Management</h3>
+                        <p>Room types, availability, occupancy, cleaning, and maintenance status.</p>
+                    </article>
+                    <article class="module-card"><span class="module-number">04</span>
+                        <h3>Fee Management</h3>
+                        <p>Fee invoices, paid records, pending payments, and ledgers.</p>
+                    </article>
+                    <article class="module-card"><span class="module-number">05</span>
+                        <h3>Complaint Management</h3>
+                        <p>Maintenance requests, severity, ticket status, and resolution updates.</p>
+                    </article>
+                    <article class="module-card"><span class="module-number">06</span>
+                        <h3>Visitor Management</h3>
+                        <p>Visitor entry records, student reference, purpose, and timing.</p>
+                    </article>
+                    <article class="module-card"><span class="module-number">07</span>
+                        <h3>Reports</h3>
+                        <p>Room allocation lists, fee summaries, complaint reports, and audit data.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section-block" id="contact">
+            <div class="container contact-layout">
+                <div>
+                    <span class="section-tag">Contact Details</span>
+                    <h2 class="section-title">Reach Hostel Office</h2>
+                    <p class="contact-text">Use this form for academic demo enquiries, hostel support, or administrative
+                        contact.</p>
+                    <div class="contact-list">
+                        <p><span>Phone:</span> +1 (234) 567-8900</p>
+                        <p><span>Email:</span> contact@hostelmgmt.com</p>
+                        <p><span>Address:</span> 100 University Ave, Campus View, Suite 500</p>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-grid">
+                        <div class="form-group"><label for="contact-name">Full Name</label><input type="text"
+                                id="contact-name" class="form-input" required></div>
+                        <div class="form-group"><label for="contact-email">Email</label><input type="email"
+                                id="contact-email" class="form-input" required></div>
+                        <div class="form-group"><label for="contact-message">Message</label><textarea id="contact-message"
+                                class="form-input" rows="4" required></textarea></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">Hostel Management</div>
+                <p class="footer-desc">A comprehensive residential management platform designed to optimize
+                    administrative control and simplify students' hostel lives.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Dashboards</h4>
+                <ul class="footer-links">
+                    <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                    <li><a href="staff-dashboard.html">Staff Dashboard</a></li>
+                    <li><a href="student-dashboard.html">Student Dashboard</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Hostel Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="app-toast">
+        <div class="toast-icon">OK</div>
+        <div class="toast-text" id="toast-message">Success Message!</div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

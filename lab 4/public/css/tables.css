@@ -1,0 +1,298 @@
+/* Tables and Data Displays - Light Blue & White ERP Theme */
+.table-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    background: #ffffff;
+}
+
+.mgmt-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+.mgmt-table th,
+.mgmt-table td {
+    padding: 0.95rem 1.1rem;
+    border-bottom: 1px solid var(--border-light);
+    color: #334155;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.mgmt-table th {
+    color: #1e3a8a;
+    background: #eff6ff;
+    font-weight: 700;
+}
+
+.mgmt-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.badge.success {
+    background: #d1fae5;
+    color: #047857;
+}
+
+.badge.warning {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.badge.danger {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.mini-btn {
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.mini-btn:hover {
+    background: var(--primary-dark);
+}
+
+.room-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+}
+
+/* Updated base font size for better readability */
+.room-card {
+    font-size: 1rem; /* increased from 0.9rem */
+    padding: 1.4rem; /* slightly larger padding */
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+}
+
+.room-card h4 {
+    font-size: 1.2rem; /* larger title */
+    margin: 0;
+    color: #1e3a8a;
+}
+
+.room-card p {
+    font-size: 0.94rem; /* slightly larger text */
+    margin-top: 0.45rem;
+    color: #475569;
+}
+
+/* Input validation visual cue */
+input.invalid, select.invalid, textarea.invalid {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 2px rgba(239,68,68,0.2);
+}
+
+/* Filter button font increase */
+.room-filter-btn {
+    font-size: 0.92rem;
+}
+
+/* Mini button font increase */
+.mini-btn {
+    font-size: 0.9rem;
+}
+
+
+.room-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: #bfdbfe;
+}
+
+.room-card h4,
+.room-card p {
+    margin: 0;
+}
+
+.room-card h4 {
+    color: #1e3a8a;
+    font-weight: 700;
+}
+
+/* Forms – larger labels and inputs */
+.form-group label {
+    font-size: 1rem; /* increased from 0.9rem */
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.form-input {
+    font-size: 1rem; /* increased for readability */
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #0f172a;
+    transition: var(--transition-fast);
+}
+
+/* Invalid field styling */
+.form-input.invalid, select.form-input.invalid {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 2px rgba(239,68,68,0.2);
+}
+
+/* Button font increase */
+.btn-primary, .btn-danger {
+    font-size: 1rem;
+    padding: 0.7rem 1.3rem;
+}
+
+
+.room-card.occupied {
+    border-left: 4px solid #ef4444;
+}
+
+.room-card.available {
+    border-left: 4px solid #10b981;
+}
+
+.room-card.maintenance {
+    border-left: 4px solid #f59e0b;
+}
+
+.detail-list {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.detail-list p {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.detail-list span {
+    color: #64748b;
+    font-weight: 600;
+}
+
+.detail-list strong {
+    color: #1e3a8a;
+}
+
+/* ── Room Card Enhancements ── */
+
+/* Header row inside each card (room number + status badge) */
+.room-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+}
+
+.room-card-type {
+    color: #475569;
+    font-size: 0.86rem;
+    margin: 0.25rem 0 0;
+}
+
+.room-card-capacity {
+    color: #64748b;
+    font-size: 0.82rem;
+    margin: 0.2rem 0 0.85rem;
+}
+
+.room-card-capacity strong {
+    color: #1e3a8a;
+}
+
+/* Edit / Delete action row at bottom of each card */
+.room-card-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    border-top: 1px solid var(--border-light);
+    padding-top: 0.75rem;
+}
+
+/* Danger (red) variant of mini-btn for Delete */
+.mini-btn-danger {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.mini-btn-danger:hover {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+/* ── btn-danger (used inside modal Delete button) ── */
+.btn-danger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.85rem 1.2rem;
+    border-radius: 999px;
+    background: #fee2e2;
+    color: #b91c1c;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition-fast);
+}
+
+.btn-danger:hover {
+    background: #ef4444;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* ── Filter Bar Buttons ── */
+.room-filter-btn {
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-light);
+    background: #ffffff;
+    color: #475569;
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.room-filter-btn:hover {
+    border-color: #93c5fd;
+    background: #eff6ff;
+    color: #1e40af;
+}
+
+.room-filter-btn.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+}
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Hostel Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <!-- Shared Navbar -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-12h1m-1 4h1m-1 4h1M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+                </svg>
+                Hostel Management
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="profile.html" class="nav-link active">Profile</a></li>
+                    <li><button class="nav-link logout-button" style="background:transparent; border:none; cursor:pointer;">Logout</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-block">
+        <div class="container" style="max-width: 680px;">
+            <div class="section-header">
+                <span class="section-tag">Account Details</span>
+                <h2 class="section-title">User Profile</h2>
+                <p>Personal credentials and active session information.</p>
+            </div>
+
+            <div class="login-card" style="max-width: 100%;">
+                <div class="user-area" style="margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem;">
+                    <div class="avatar" id="user-profile-avatar" style="width: 64px; height: 64px; font-size: 1.5rem;">U</div>
+                    <div class="profile-info">
+                        <span class="profile-name" id="user-profile-name" style="font-size: 1.3rem;">Guest User</span>
+                        <span class="profile-role" id="user-profile-role" style="font-size: 0.9rem;">STUDENT</span>
+                    </div>
+                </div>
+
+                <div class="detail-list">
+                    <p><span>Full Name</span><strong id="user-profile-name-detail">John Doe</strong></p>
+                    <p><span>Email Address</span><strong id="user-profile-email">john.doe@university.edu</strong></p>
+                    <p><span>Assigned Room</span><strong>Block A - Room 204</strong></p>
+                    <p><span>Account Status</span><strong style="color: var(--success);">Active</strong></p>
+                    <p><span>Membership Type</span><strong>Full Resident Hosteller</strong></p>
+                </div>
+
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="index.html" class="btn btn-secondary" style="flex: 1; text-align: center;">Back to Home</a>
+                    <button class="btn btn-primary logout-button" style="flex: 1;">Logout</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Hostel Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="app-toast">
+        <div class="toast-icon">OK</div>
+        <div class="toast-text" id="toast-message">Success Message!</div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+
+</html>

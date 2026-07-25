@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Management - Hostel Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <!-- Shared Navbar -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-12h1m-1 4h1m-1 4h1M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+                </svg>
+                Hostel Management
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="admin-dashboard.html" class="nav-link">Admin Dashboard</a></li>
+                    <li><a href="room-management.html" class="nav-link active">Room Management</a></li>
+                    <li><a href="room-allocation.html" class="nav-link">Room Allocation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-block">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Room Status</span>
+                <h2 class="section-title">Room and Allocation Status</h2>
+                <p>Real-time status of hostel blocks and occupancy details.</p>
+            </div>
+
+            <!-- Room cards are loaded dynamically from /api/rooms -->
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+                <div id="roomFilterBar" style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+                    <button class="room-filter-btn active" data-filter="all">All Rooms</button>
+                    <button class="room-filter-btn" data-filter="available">Available</button>
+                    <button class="room-filter-btn" data-filter="occupied">Occupied</button>
+                    <button class="room-filter-btn" data-filter="maintenance">Maintenance</button>
+                </div>
+                <button class="btn btn-primary" id="addRoomBtn" data-modal="room-modal" style="min-width:130px;">+ Add Room</button>
+            </div>
+
+            <!-- Add/Edit Room Modal -->
+            <div class="modal" id="room-modal">
+                <div class="modal-content">
+                    <button class="modal-close" aria-label="Close modal" id="closeRoomModal">&times;</button>
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="roomModalTitle">Add Room</h3>
+                        <p class="modal-desc">Enter room details.</p>
+                    </div>
+                    <form id="roomForm">
+                        <div class="form-group">
+                            <label for="roomNoInput">Room Number</label>
+                            <input type="text" id="roomNoInput" class="form-input" placeholder="e.g. A101" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="roomTypeInput">Room Type</label>
+                            <select id="roomTypeInput" class="form-input" required>
+                                <option value="Single">Single</option>
+                                <option value="Double">Double</option>
+                                <option value="Three Sharing">Three Sharing</option>
+                                <option value="Four Sharing">Four Sharing</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="capacityInput">Capacity</label>
+                            <input type="number" id="capacityInput" class="form-input" min="1" max="10" placeholder="e.g. 2" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="statusInput">Status</label>
+                            <select id="statusInput" class="form-input" required>
+                                <option value="Available">Available</option>
+                                <option value="Occupied">Occupied</option>
+                                <option value="Maintenance">Maintenance</option>
+                            </select>
+                        </div>
+                        <input type="hidden" id="roomIdInput" />
+                        <div style="display:flex; gap:0.75rem; margin-top:0.5rem;">
+                            <button type="submit" class="btn btn-primary" id="roomSubmitBtn" style="flex:1;">Save Room</button>
+                            <button type="button" class="btn btn-danger" id="roomDeleteBtn" style="display:none;">Delete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Room cards container -->
+            <div class="room-grid-layout" id="roomContainer" style="margin-top: 2rem;">
+                <p style="grid-column: 1 / -1; text-align: center; color: #64748b;">Loading rooms...</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Hostel Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="app-toast">
+        <div class="toast-icon">OK</div>
+        <div class="toast-text" id="toast-message">Success Message!</div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/rooms.js"></script>
+</body>
+
+</html>
