@@ -1,0 +1,62 @@
+{
+  "students": [
+    {
+      "name": "Anna",
+      "age": "20",
+      "gender": "Female",
+      "course": "mca",
+      "department": "Computer science",
+      "roomNumber": "A101",
+      "phone": "9495222581",
+      "email": "angelmariya502@gmail.com",
+      "password": "Anna123",
+      "id": "iTzjNwBffBk"
+    },
+    {
+      "name": "mathew",
+      "age": "22",
+      "gender": "Male",
+      "course": "bcom",
+      "department": "bcom",
+      "roomNumber": "A102",
+      "phone": "9495222581",
+      "email": "mathew@gmail.com",
+      "password": "mathew123",
+      "id": "XzixO2chYEU"
+    },
+    {
+      "name": "palak",
+      "age": "21",
+      "gender": "Female",
+      "course": "mca",
+      "department": "computer science",
+      "roomNumber": "E101",
+      "phone": "9846672502",
+      "email": "palak@gmail.com",
+      "id": "8Pjrz281C3M"
+    },
+    {
+      "name": "Ann Mariya",
+      "age": "15",
+      "gender": "Female",
+      "course": "bcom",
+      "department": "computer science",
+      "roomNumber": "E102",
+      "phone": "9846672502",
+      "email": "annmariya@gmail.com",
+      "id": "ubPYbxQ5Nto"
+    },
+    {
+      "name": "Lara",
+      "age": "23",
+      "gender": "Female",
+      "course": "MCA",
+      "department": "Computer science",
+      "roomNumber": "A103",
+      "phone": "9495222581",
+      "email": "lara502@gmail.com",
+      "id": "lcmYzoUX3Mc"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
