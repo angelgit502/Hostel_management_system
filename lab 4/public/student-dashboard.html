@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Hostel Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <!-- Shared Navbar -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-12h1m-1 4h1m-1 4h1M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+                </svg>
+                Hostel Management
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="student-dashboard.html" class="nav-link active">Dashboard</a></li>
+                    <li><a href="profile.html" class="nav-link">Profile</a></li>
+                    <li><button class="nav-link logout-button" style="background:transparent; border:none; cursor:pointer;">Logout</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard-panel" id="student-dashboard" data-dashboard="student">
+        <div class="dashboard-topbar">
+            <div class="logo-area"><span class="small-logo">HMS</span><span>Student Dashboard</span></div>
+            <div class="user-area">
+                <div class="profile-widget">
+                    <div class="avatar">U</div>
+                    <div class="profile-info">
+                        <span class="profile-name" id="student-welcome-name">Welcome Student</span>
+                        <span class="profile-role">Student (Roll #20412)</span>
+                    </div>
+                </div>
+                <button class="btn-logout-top logout-button">Logout</button>
+            </div>
+        </div>
+        <div class="dashboard-shell">
+            <aside class="sidebar">
+                <a href="student-dashboard.html" class="sidebar-link active">My Dashboard</a>
+                <button class="sidebar-link open-action-modal" data-modal="room-details-modal">Room Details</button>
+                <a href="payment-management.html" class="sidebar-link">Fees and Payments</a>
+                <button class="sidebar-link open-action-modal" data-modal="complaint-modal">Lodge Complaint</button>
+                <a href="profile.html" class="sidebar-link">My Profile</a>
+                <button class="sidebar-logout logout-button">Logout</button>
+            </aside>
+            <div class="main-content">
+                <div class="page-header">
+                    <h2>Student Dashboard</h2>
+                    <p id="welcome-msg">Welcome Student</p>
+                </div>
+                <div class="stats-grid student-stats">
+                    <article class="stat-card">
+                        <div class="stat-icon blue">RM</div>
+                        <div><span class="stat-label">Assigned Room</span><span class="stat-value">Block A - 204</span></div>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-icon green">FS</div>
+                        <div><span class="stat-label">Fee Status</span><span class="stat-value">Paid</span></div>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-icon red">OC</div>
+                        <div><span class="stat-label">My Open Complaints</span><span class="stat-value"
+                                id="student-complaint-count">1</span></div>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-icon orange">OP</div>
+                        <div><span class="stat-label">Outpass Status</span><span class="stat-value">None Active</span></div>
+                    </article>
+                </div>
+                <div class="dashboard-grid">
+                    <article class="dashboard-card">
+                        <div class="card-title"><span>My Maintenance Logs</span><span class="badge-count">Active</span></div>
+                        <div class="activities-list" id="student-complaint-list">
+                            <div class="activity-item">
+                                <div class="activity-badge complaint">!</div>
+                                <div><span class="activity-text">Ceiling fan capacitor noisy</span>
+                                    <p class="activity-desc">Logged on 2026-06-08 - Status: <span
+                                            class="badge warning">In Progress</span></p>
+                                    <span class="activity-time">Warden dispatched electrician caretaker.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="dashboard-card">
+                        <div class="card-title">Lodge a New Complaint</div>
+                        <form id="frm-lodge-complaint">
+                            <div class="form-group"><label for="complaint-title">Issue Description</label><input
+                                    type="text" id="complaint-title" class="form-input"
+                                    placeholder="e.g. Wi-Fi not working / Leaking pipe" required></div>
+                            <div class="form-group"><label for="complaint-severity">Severity Level</label><select
+                                    id="complaint-severity" class="form-input">
+                                    <option value="Low">Low (General Repair)</option>
+                                    <option value="Medium">Medium (Affects daily use)</option>
+                                    <option value="High">High (Emergency)</option>
+                                </select></div>
+                            <button type="submit" class="btn btn-primary full-width">Lodge Maintenance Request</button>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div class="modal" id="room-details-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Room Allocation Specifications</h3>
+                <p class="modal-desc">Details regarding your allocated hostel quarters.</p>
+            </div>
+            <div class="detail-list">
+                <p><span>Block</span><strong>Block A</strong></p>
+                <p><span>Room Number</span><strong>Room 204</strong></p>
+                <p><span>Configuration</span><strong>Double Sharing</strong></p>
+                <p><span>Roommate</span><strong>Michael Scott</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="complaint-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Submit Complaint</h3>
+                <p class="modal-desc">Submit a maintenance ticket directly to the warden office.</p>
+            </div>
+            <form id="frm-lodge-modal">
+                <div class="form-group"><label for="modal-complaint-title">Description of Issue</label><input
+                        type="text" id="modal-complaint-title" class="form-input"
+                        placeholder="e.g. Broken study light bulb" required></div>
+                <button type="submit" class="btn btn-primary full-width">Lodge Ticket</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Hostel Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="app-toast">
+        <div class="toast-icon">OK</div>
+        <div class="toast-text" id="toast-message">Success Message!</div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/complaints.js"></script>
+</body>
+
+</html>

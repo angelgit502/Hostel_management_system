@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard - Hostel Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <!-- Shared Navbar -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-12h1m-1 4h1m-1 4h1M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+                </svg>
+                Hostel Management
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="staff-dashboard.html" class="nav-link active">Dashboard</a></li>
+                    <li><a href="profile.html" class="nav-link">Profile</a></li>
+                    <li><button class="nav-link logout-button" style="background:transparent; border:none; cursor:pointer;">Logout</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard-panel" id="staff-dashboard" data-dashboard="staff">
+        <div class="dashboard-topbar">
+            <div class="logo-area"><span class="small-logo">HMS</span><span>Staff Dashboard</span></div>
+            <div class="user-area">
+                <div class="profile-widget">
+                    <div class="avatar">WD</div>
+                    <div class="profile-info">
+                        <span class="profile-name" id="staff-welcome-name">Welcome Staff</span>
+                        <span class="profile-role">Hostel Staff Warden</span>
+                    </div>
+                </div>
+                <button class="btn-logout-top logout-button">Logout</button>
+            </div>
+        </div>
+        <div class="dashboard-shell">
+            <aside class="sidebar">
+                <a href="staff-dashboard.html" class="sidebar-link active">Dashboard</a>
+                <a href="student-management.html" class="sidebar-link">Student Management</a>
+                <a href="room-allocation.html" class="sidebar-link">Room Allocation</a>
+                <a href="payment-management.html" class="sidebar-link">Fee Management</a>
+                <a href="complaint-management.html" class="sidebar-link">Complaint Management</a>
+                <button class="sidebar-logout logout-button">Logout</button>
+            </aside>
+            <div class="main-content">
+                <div class="page-header">
+                    <h2>Staff Dashboard</h2>
+                    <p id="staff-welcome-msg">Welcome Staff</p>
+                </div>
+                <div class="stats-grid">
+                    <article class="stat-card">
+                        <div class="stat-icon blue">ST</div>
+                        <div><span class="stat-label">Students Assigned</span><span class="stat-value"
+                                data-stat="students">250</span></div>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-icon green">OR</div>
+                        <div><span class="stat-label">Occupied Rooms</span><span class="stat-value"
+                                data-stat="occupied">110</span></div>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-icon green">AR</div>
+                        <div><span class="stat-label">Available Rooms</span><span class="stat-value"
+                                data-stat="available">10</span></div>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-icon orange">NC</div>
+                        <div><span class="stat-label">New Complaints</span><span class="stat-value">5</span></div>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-icon red">PC</div>
+                        <div><span class="stat-label">Pending Complaints</span><span class="stat-value"
+                                data-stat="complaints">5</span></div>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-icon blue">RC</div>
+                        <div><span class="stat-label">Resolved Complaints</span><span class="stat-value">24</span></div>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-icon purple">FR</div>
+                        <div><span class="stat-label">Fee Requests</span><span class="stat-value">15</span></div>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-icon blue">MR</div>
+                        <div><span class="stat-label">Maintenance Requests</span><span class="stat-value">6</span></div>
+                    </article>
+                </div>
+                <div class="dashboard-grid">
+                    <article class="dashboard-card">
+                        <div class="card-title"><span>Recent Activities</span><span class="badge-count">Live</span></div>
+                        <div class="activities-list" data-activity-list>
+                            <div class="activity-item">
+                                <div class="activity-badge register">+</div>
+                                <div><span class="activity-text">New Student Registration</span>
+                                    <p class="activity-desc">Michael Scott registered for Block A Room 204</p>
+                                    <span class="activity-time">5 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-badge allocate">R</div>
+                                <div><span class="activity-text">Recent Room Allocation</span>
+                                    <p class="activity-desc">Jane Smith allocated to Block B Room 102 (Single)</p>
+                                    <span class="activity-time">20 minutes ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="dashboard-card">
+                        <div class="card-title">Quick Actions</div>
+                        <div class="quick-actions-grid">
+                            <button class="action-btn open-action-modal" data-modal="add-student-modal">Add Student</button>
+                            <a href="room-allocation.html" class="action-btn" style="display:flex;align-items:center;">Allocate Room</a>
+                            <a href="complaint-management.html" class="action-btn" style="display:flex;align-items:center;">View Complaints</a>
+                            <button class="action-btn open-action-modal" data-modal="report-modal">Generate Report</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div class="modal" id="add-student-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Add Student</h3>
+                <p class="modal-desc">Register a new student directly into the system database.</p>
+            </div>
+            <form id="frm-add-student">
+                <div class="form-group"><label for="new-std-name">Full Name</label><input type="text" id="new-std-name"
+                        class="form-input" placeholder="e.g. Jim Halpert" required></div>
+                <div class="form-group"><label for="new-std-email">Email Address</label><input type="email"
+                        id="new-std-email" class="form-input" placeholder="e.g. jim@university.edu" required></div>
+                <div class="form-group"><label for="new-std-room">Room Preference</label><select id="new-std-room"
+                        class="form-input" required>
+                        <option>Block A Room 102 (Single)</option>
+                        <option>Block B Room 204 (Double)</option>
+                        <option>Block C Room 301 (Single)</option>
+                    </select></div>
+                <button type="submit" class="btn btn-primary full-width">Add Student</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="report-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Generate Report</h3>
+                <p class="modal-desc">Export systemic database parameters to physical media.</p>
+            </div>
+            <div class="form-group"><label for="report-type">Report Configuration</label><select id="report-type"
+                    class="form-input">
+                    <option>Full Hostel Audit Report (PDF)</option>
+                    <option>Outstanding Fee Ledgers (Excel)</option>
+                    <option>Room Allocations and Status List</option>
+                </select></div>
+            <button class="btn btn-primary full-width" id="download-report">Download Report</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Hostel Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="app-toast">
+        <div class="toast-icon">OK</div>
+        <div class="toast-text" id="toast-message">Success Message!</div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/students.js"></script>
+    <script src="js/payments.js"></script>
+</body>
+
+</html>

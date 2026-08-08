@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Allocation - Hostel Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <!-- Shared Navbar -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-12h1m-1 4h1m-1 4h1M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+                </svg>
+                Hostel Management
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="room-management.html" class="nav-link">Room Status</a></li>
+                    <li><a href="room-allocation.html" class="nav-link active">Room Allocation</a></li>
+                    <li><a href="admin-dashboard.html" class="nav-link">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-block">
+        <div class="container" style="max-width: 600px;">
+            <div class="section-header">
+                <span class="section-tag">Allocation Module</span>
+                <h2 class="section-title">Allocate Room</h2>
+                <p>Assign Block, Room, and Bed numbers to hostellers.</p>
+            </div>
+
+            <div class="login-card" style="max-width: 100%;">
+                <form id="frm-allocate">
+                    <div class="form-group"><label for="alloc-name">Student Name</label><input type="text" id="alloc-name"
+                            class="form-input" placeholder="e.g. Pam Beesly" required></div>
+                    <div class="form-group"><label for="alloc-block">Block / Room Selection</label><select id="alloc-block"
+                            class="form-input" required>
+                            <option>Block A Room 103 (Single)</option>
+                            <option>Block B Room 104 (Double)</option>
+                            <option>Block C Room 105 (Single)</option>
+                            <option>Block A Room 202 (Double)</option>
+                            <option>Block B Room 301 (Single)</option>
+                        </select></div>
+                    <button type="submit" class="btn btn-primary full-width">Confirm Allocation</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Hostel Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="app-toast">
+        <div class="toast-icon">OK</div>
+        <div class="toast-text" id="toast-message">Success Message!</div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/allocation.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management - Hostel Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <!-- Shared Navbar -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-12h1m-1 4h1m-1 4h1M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+                </svg>
+                Hostel Management
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="complaint-management.html" class="nav-link active">Complaints</a></li>
+                    <li><a href="admin-dashboard.html" class="nav-link">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-block">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Maintenance Support</span>
+                <h2 class="section-title">Active Complaints List</h2>
+                <p>Track and resolve complaints reported by student hostellers.</p>
+            </div>
+
+            <div class="table-wrap" style="margin-top: 1.5rem;">
+                <table class="mgmt-table">
+                    <thead>
+                        <tr>
+                            <th>Room</th>
+                            <th>Issue Description</th>
+                            <th>Severity</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbl-complaints-body">
+                        <tr id="row-c1">
+                            <td>Room 305</td>
+                            <td>Plumbing leak under washbasin</td>
+                            <td><span class="badge danger">High</span></td>
+                            <td><button class="mini-btn resolve-btn" data-row="row-c1">Resolve</button></td>
+                        </tr>
+                        <tr id="row-c2">
+                            <td>Room 102</td>
+                            <td>Wi-Fi routing drops continuously</td>
+                            <td><span class="badge warning">Medium</span></td>
+                            <td><button class="mini-btn resolve-btn" data-row="row-c2">Resolve</button></td>
+                        </tr>
+                        <tr id="row-c3">
+                            <td>Room 204</td>
+                            <td>Ceiling fan capacitor noisy</td>
+                            <td><span class="badge success">Low</span></td>
+                            <td><button class="mini-btn resolve-btn" data-row="row-c3">Resolve</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Hostel Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="app-toast">
+        <div class="toast-icon">OK</div>
+        <div class="toast-text" id="toast-message">Success Message!</div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/complaints.js"></script>
+</body>
+
+</html>

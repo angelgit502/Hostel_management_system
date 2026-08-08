@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Hostel Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <!-- Shared Navbar -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-12h1m-1 4h1m-1 4h1M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+                </svg>
+                Hostel Management
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="register.html" class="nav-link active">Register</a></li>
+                    <li><a href="login.html" class="nav-link">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-block">
+        <div class="container" style="max-width: 760px;">
+            <div class="section-header">
+                <span class="section-tag">Account Creation</span>
+                <h2 class="section-title">Portal Registration</h2>
+                <p>Register as a student hosteller or staff member</p>
+            </div>
+
+            <!-- Registration Type Tabs -->
+            <div class="hero-buttons" style="margin-bottom: 2rem;">
+                <button class="btn btn-primary" id="btn-tab-student" onclick="showTab('student')">Student Registration</button>
+                <button class="btn btn-secondary" id="btn-tab-staff" onclick="showTab('staff')">Staff Registration</button>
+            </div>
+
+            <!-- Student Form -->
+            <div id="tab-student" class="login-card" style="max-width: 100%;">
+                <div class="modal-header">
+                    <h3 class="modal-title">Student Registration</h3>
+                    <p class="modal-desc">Create your hosteller account to apply for hostel rooms.</p>
+                </div>
+                <form id="student-reg-form">
+                    <div class="form-grid">
+                        <div class="form-group"><label for="std-name">Full Name</label><input type="text" id="std-name"
+                                class="form-input" placeholder="e.g. John Doe" required></div>
+                        <div class="form-group"><label for="std-dob">Date of Birth</label><input type="date" id="std-dob"
+                                class="form-input" required></div>
+                        <div class="form-group"><label for="std-gender">Gender</label><select id="std-gender" class="form-input"
+                                required>
+                                <option value="" disabled selected>Select your gender...</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select></div>
+                        <div class="form-group"><label for="std-phone">Phone Number</label><input type="tel" id="std-phone"
+                                class="form-input" placeholder="e.g. +1234567890" required></div>
+                        <div class="form-group"><label for="std-email">Email</label><input type="email" id="std-email"
+                                class="form-input" placeholder="e.g. john.doe@university.edu" required></div>
+                        <div class="form-group"><label for="std-room">Room Preference</label><select id="std-room"
+                                class="form-input" required>
+                                <option value="" disabled selected>Select room type...</option>
+                                <option>Single</option>
+                                <option>Double</option>
+                            </select></div>
+                        <div class="form-group"><label for="std-pwd">Set Password</label><input type="password" id="std-pwd"
+                                class="form-input" placeholder="Min. 8 characters" required></div>
+                        <div class="form-group"><label for="std-confirm-pwd">Confirm Password</label><input type="password"
+                                id="std-confirm-pwd" class="form-input" placeholder="Confirm your password" required></div>
+                    </div>
+                    <div class="form-group"><label for="std-address">Address</label><textarea id="std-address"
+                            class="form-input" rows="3" placeholder="Enter your full address" required></textarea></div>
+                    <button type="submit" class="btn btn-primary full-width">Register Student Account</button>
+                </form>
+            </div>
+
+            <!-- Staff Form -->
+            <div id="tab-staff" class="login-card" style="max-width: 100%; display: none;">
+                <div class="modal-header">
+                    <h3 class="modal-title">Staff Registration</h3>
+                    <p class="modal-desc">Register as warden, admin, or support staff helper.</p>
+                </div>
+                <form id="staff-reg-form">
+                    <div class="form-grid">
+                        <div class="form-group"><label for="stf-name">Full Name</label><input type="text" id="stf-name"
+                                class="form-input" placeholder="e.g. Dr. Sarah Jenkins" required></div>
+                        <div class="form-group"><label for="stf-dob">Date of Birth</label><input type="date" id="stf-dob"
+                                class="form-input" required></div>
+                        <div class="form-group"><label for="stf-gender">Gender</label><select id="stf-gender" class="form-input"
+                                required>
+                                <option value="" disabled selected>Select your gender...</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select></div>
+                        <div class="form-group"><label for="stf-phone">Phone Number</label><input type="tel" id="stf-phone"
+                                class="form-input" placeholder="e.g. +1234567890" required></div>
+                        <div class="form-group"><label for="stf-email">Email</label><input type="email" id="stf-email"
+                                class="form-input" placeholder="e.g. sjenkins@hostel.edu" required></div>
+                        <div class="form-group"><label for="stf-designation">Designation</label><input type="text"
+                                id="stf-designation" class="form-input" placeholder="e.g. Hostel Warden / Accountant" required>
+                        </div>
+                        <div class="form-group"><label for="stf-pwd">Set Password</label><input type="password" id="stf-pwd"
+                                class="form-input" placeholder="Min. 8 characters" required></div>
+                        <div class="form-group"><label for="stf-confirm-pwd">Confirm Password</label><input type="password"
+                                id="stf-confirm-pwd" class="form-input" placeholder="Confirm your password" required></div>
+                    </div>
+                    <div class="form-group"><label for="stf-address">Address</label><textarea id="stf-address"
+                            class="form-input" rows="3" placeholder="Enter your full address" required></textarea></div>
+                    <button type="submit" class="btn btn-primary full-width">Register Staff Account</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Hostel Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="app-toast">
+        <div class="toast-icon">OK</div>
+        <div class="toast-text" id="toast-message">Success Message!</div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/students.js"></script>
+    <script src="js/staff.js"></script>
+    <script>
+        function showTab(type) {
+            const studentTab = document.getElementById('tab-student');
+            const staffTab = document.getElementById('tab-staff');
+            const btnStudent = document.getElementById('btn-tab-student');
+            const btnStaff = document.getElementById('btn-tab-staff');
+
+            if (type === 'staff') {
+                studentTab.style.display = 'none';
+                staffTab.style.display = 'block';
+                btnStudent.className = 'btn btn-secondary';
+                btnStaff.className = 'btn btn-primary';
+            } else {
+                studentTab.style.display = 'block';
+                staffTab.style.display = 'none';
+                btnStudent.className = 'btn btn-primary';
+                btnStaff.className = 'btn btn-secondary';
+            }
+        }
+
+        // Check query param e.g. ?type=staff
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('type') === 'staff') {
+            showTab('staff');
+        }
+    </script>
+</body>
+
+</html>

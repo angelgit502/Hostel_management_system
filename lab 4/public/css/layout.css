@@ -1,0 +1,133 @@
+/* ==========================================================
+   layout.css — Full-width ERP Layout Overrides
+   Applied after style.css and dashboard.css on every page.
+   Does NOT touch colors, typography, or component structure.
+   ========================================================== */
+
+/* ── 1. Body flex column so footer sticks to the bottom ── */
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── 2. Header always spans full viewport width ── */
+.header {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Make the navbar inner container full-width (override min(1180px,…)) */
+.header .container.navbar,
+.header > .container {
+  width: 100%;
+  max-width: none;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* ── 3. Main content expands to fill remaining vertical space ── */
+main {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── 4. Section containers — full-width with gutters ── */
+/*
+   Override the default .container (width: min(1180px, calc(100% - 2rem)); margin: 0 auto)
+   but ONLY when it is a direct child of a section/main,
+   NOT inside modals or the dashboard panel where we want centred cards.
+*/
+main > .section-block > .container,
+main > .hero > .container,
+main > section > .container,
+main > .section-block .container {
+  width: 100%;
+  max-width: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+}
+
+/* Keep registration/login/profile forms centred within the full-width layout */
+.login-container,
+.register-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ── 5. Dashboard shell — stretch to full width ── */
+.dashboard-topbar {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;        /* Remove rounded top corners so it spans edge-to-edge */
+  box-sizing: border-box;
+}
+
+.dashboard-shell {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;        /* Remove rounded bottom corners */
+  min-height: calc(100vh - 76px - 3.5rem);  /* fill remaining height (header + footer) */
+  box-sizing: border-box;
+}
+
+/* ── 6. Footer always spans full width ── */
+footer.footer {
+  width: 100%;
+  margin-top: auto;
+  box-sizing: border-box;
+}
+
+/* Footer containers inside footer — full-width with gutters */
+footer.footer .container {
+  width: 100%;
+  max-width: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+}
+
+/* ── 7. Tables stretch to container width ── */
+table {
+  width: 100%;
+  table-layout: auto;
+}
+
+/* ── 8. Utility helpers ── */
+
+/* Full-width utility class (used on buttons etc.) */
+.full-width {
+  width: 100%;
+}
+
+/* Auto-wrapping flex card grid for dashboard widgets */
+.grid-fill {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* ── 9. Responsive adjustments ── */
+@media (max-width: 860px) {
+  main > .section-block > .container,
+  main > .hero > .container,
+  main > section > .container,
+  main > .section-block .container,
+  footer.footer .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management - Hostel Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <!-- Shared Navbar -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-12h1m-1 4h1m-1 4h1M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+                </svg>
+                Hostel Management
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="student-management.html" class="nav-link active">Student Database</a></li>
+                    <li><a href="admin-dashboard.html" class="nav-link">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-block">
+        <div class="container">
+            <div class="section-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; text-align:left;">
+                <div>
+                    <span class="section-tag">Database Panel</span>
+                    <h2 class="section-title">Student Database Panel</h2>
+                    <p>Overview of active student hostellers and their details.</p>
+                </div>
+                <button class="btn btn-primary open-modal" data-modal="add-student-modal">+ Add Student</button>
+            </div>
+
+            <div class="table-wrap" style="margin-top: 1.5rem;">
+                <table class="mgmt-table">
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Room</th>
+                            <th>Phone</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Room 102 (Single)</td>
+                            <td>+1 234 567 8900</td>
+                            <td><span class="badge success">Checked In</span></td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>Room 204 (Double)</td>
+                            <td>+1 987 654 3210</td>
+                            <td><span class="badge success">Checked In</span></td>
+                        </tr>
+                        <tr>
+                            <td>Michael Scott</td>
+                            <td>Room 305 (Single)</td>
+                            <td>+1 555 019 9283</td>
+                            <td><span class="badge danger">Checked Out</span></td>
+                        </tr>
+                        <tr>
+                            <td>Pam Beesly</td>
+                            <td>Room 104 (Double)</td>
+                            <td>+1 555 019 3321</td>
+                            <td><span class="badge success">Checked In</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="add-student-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Add Student</h3>
+                <p class="modal-desc">Register a new student directly into the system database.</p>
+            </div>
+            <form id="frm-add-student">
+                <div class="form-group"><label for="new-std-name">Full Name</label><input type="text" id="new-std-name"
+                        class="form-input" placeholder="e.g. Jim Halpert" required></div>
+                <div class="form-group"><label for="new-std-email">Email Address</label><input type="email"
+                        id="new-std-email" class="form-input" placeholder="e.g. jim@university.edu" required></div>
+                <div class="form-group"><label for="new-std-room">Room Preference</label><select id="new-std-room"
+                        class="form-input" required>
+                        <option>Block A Room 102 (Single)</option>
+                        <option>Block B Room 204 (Double)</option>
+                        <option>Block C Room 301 (Single)</option>
+                    </select></div>
+                <button type="submit" class="btn btn-primary full-width">Add Student</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Hostel Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="app-toast">
+        <div class="toast-icon">OK</div>
+        <div class="toast-text" id="toast-message">Success Message!</div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/students.js"></script>
+</body>
+
+</html>

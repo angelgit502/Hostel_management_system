@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management - Hostel Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+    <!-- Shared Navbar -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-12h1m-1 4h1m-1 4h1M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+                </svg>
+                Hostel Management
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="staff-management.html" class="nav-link active">Staff Management</a></li>
+                    <li><a href="admin-dashboard.html" class="nav-link">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-block">
+        <div class="container">
+            <div class="section-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; text-align:left;">
+                <div>
+                    <span class="section-tag">Administration Panel</span>
+                    <h2 class="section-title">Staff Management Panel</h2>
+                    <p>Overview of active hostel administration and warden staff.</p>
+                </div>
+                <button class="btn btn-primary open-modal" data-modal="add-staff-modal">+ Add Staff</button>
+            </div>
+
+            <div class="table-wrap" style="margin-top: 1.5rem;">
+                <table class="mgmt-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Designation</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dr. Sarah Jenkins</td>
+                            <td>Hostel Warden</td>
+                            <td>sjenkins@hostel.edu</td>
+                            <td><span class="badge success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mr. Robert Vance</td>
+                            <td>Caretaker</td>
+                            <td>rvance@hostel.edu</td>
+                            <td><span class="badge success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mrs. Angela Martin</td>
+                            <td>Accounts Manager</td>
+                            <td>amartin@hostel.edu</td>
+                            <td><span class="badge warning">On Leave</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="add-staff-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Add Staff Member</h3>
+                <p class="modal-desc">Add a new warden, accountant, or caretaker.</p>
+            </div>
+            <form id="frm-add-staff">
+                <div class="form-group"><label for="new-stf-name">Full Name</label><input type="text" id="new-stf-name"
+                        class="form-input" placeholder="e.g. Angela Martin" required></div>
+                <div class="form-group"><label for="new-stf-role">Designation</label><input type="text"
+                        id="new-stf-role" class="form-input" placeholder="e.g. Accounts Warden" required></div>
+                <div class="form-group"><label for="new-stf-email">Email Address</label><input type="email"
+                        id="new-stf-email" class="form-input" placeholder="e.g. angela@hostel.edu" required></div>
+                <button type="submit" class="btn btn-primary full-width">Add Staff</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Hostel Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="app-toast">
+        <div class="toast-icon">OK</div>
+        <div class="toast-text" id="toast-message">Success Message!</div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/staff.js"></script>
+</body>
+
+</html>
