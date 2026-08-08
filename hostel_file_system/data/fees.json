@@ -1,0 +1,8 @@
+[
+  {
+    "fee_id": 1,
+    "student_id": 101,
+    "amount": 5000,
+    "status": "Paid"
+  }
+]
