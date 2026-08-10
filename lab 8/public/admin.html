@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Hostel Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div>
+            <h2>Hostel Management System</h2>
+            <span class="nav-tag">Admin Dashboard</span>
+        </div>
+        <button class="btn-logout" onclick="logout()">Logout</button>
+    </header>
+
+    <main class="dashboard-container">
+
+        <h1 class="page-title">Admin Dashboard</h1>
+
+        <!-- Real-time Statistics Section -->
+        <section class="stats-section">
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Total Rooms</span>
+                    <span class="stat-value" id="statTotalRooms">0</span>
+                </div>
+                <div class="stat-card success">
+                    <span class="stat-label">Available Rooms</span>
+                    <span class="stat-value" id="statAvailableRooms">0</span>
+                </div>
+                <div class="stat-card warning">
+                    <span class="stat-label">Occupied Rooms</span>
+                    <span class="stat-value" id="statOccupiedRooms">0</span>
+                </div>
+                <div class="stat-card info">
+                    <span class="stat-label">Total Capacity</span>
+                    <span class="stat-value" id="statTotalCapacity">0</span>
+                </div>
+            </div>
+
+            <!-- Simple HTML/CSS Charts -->
+            <div class="charts-grid">
+
+                <div class="chart-card">
+                    <h3>Room Status Breakdown</h3>
+                    <div class="stacked-bar-container">
+                        <div id="barAvailable" class="bar-segment bar-available" style="width: 0%" title="Available"></div>
+                        <div id="barOccupied" class="bar-segment bar-occupied" style="width: 0%" title="Occupied"></div>
+                        <div id="barMaintenance" class="bar-segment bar-maintenance" style="width: 0%" title="Maintenance"></div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><i class="dot dot-available"></i> Available (<span id="pctAvailable">0%</span>)</span>
+                        <span><i class="dot dot-occupied"></i> Occupied (<span id="pctOccupied">0%</span>)</span>
+                        <span><i class="dot dot-maintenance"></i> Maintenance (<span id="pctMaintenance">0%</span>)</span>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Capacity Utilization</h3>
+                    <div class="stacked-bar-container">
+                        <div id="barCapacity" class="bar-segment bar-capacity" style="width: 0%" title="Allocated Capacity"></div>
+                    </div>
+                    <div class="chart-legend">
+                        <span>Occupied Capacity: <strong id="valOccupiedCapacity">0</strong> / <strong id="valTotalCapacity">0</strong> beds (<span id="pctCapacity">0%</span>)</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- System Modules Section -->
+        <section class="modules-section">
+            <h2 class="section-heading">System Modules</h2>
+
+            <div class="dashboard-grid">
+
+                <!-- Room Management: ACTIVE -->
+                <div class="module-card active" onclick="window.location.href='room-management.html'">
+                    <div class="module-header">
+                        <h3>Room Management</h3>
+                        <span class="badge badge-active">ACTIVE</span>
+                    </div>
+                    <p>Manage hostel rooms, perform CRUD operations, and set room availability.</p>
+                </div>
+
+                <!-- Inactive Modules -->
+                <div class="module-card disabled">
+                    <div class="module-header">
+                        <h3>Student Management</h3>
+                        <span class="badge badge-inactive">Inactive</span>
+                    </div>
+                    <p>Student registration, room allotment, and records.</p>
+                </div>
+
+                <div class="module-card disabled">
+                    <div class="module-header">
+                        <h3>Staff Management</h3>
+                        <span class="badge badge-inactive">Inactive</span>
+                    </div>
+                    <p>Warden, maintenance staff, and administrative accounts.</p>
+                </div>
+
+                <div class="module-card disabled">
+                    <div class="module-header">
+                        <h3>Fee Management</h3>
+                        <span class="badge badge-inactive">Inactive</span>
+                    </div>
+                    <p>Hostel fees structure, payments, and receipts.</p>
+                </div>
+
+                <div class="module-card disabled">
+                    <div class="module-header">
+                        <h3>Complaint Management</h3>
+                        <span class="badge badge-inactive">Inactive</span>
+                    </div>
+                    <p>Student complaints, repair requests, and status.</p>
+                </div>
+
+                <div class="module-card disabled">
+                    <div class="module-header">
+                        <h3>Reports</h3>
+                        <span class="badge badge-inactive">Inactive</span>
+                    </div>
+                    <p>Occupancy reports, capacity metrics, and logs.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Auth check
+        if (sessionStorage.getItem("isAdminLoggedIn") !== "true") {
+            window.location.href = "index.html";
+        }
+
+        function logout() {
+            sessionStorage.removeItem("isAdminLoggedIn");
+            window.location.href = "index.html";
+        }
+
+        // Fetch MongoDB room data to compute stats & update charts dynamically
+        async function fetchDashboardStats() {
+            try {
+                const response = await fetch("/api/rooms");
+                if (!response.ok) return;
+                const rooms = await response.json();
+
+                const totalRooms = rooms.length;
+                let available = 0;
+                let occupied = 0;
+                let maintenance = 0;
+                let totalCapacity = 0;
+                let occupiedCapacity = 0;
+
+                rooms.forEach(r => {
+                    const cap = Number(r.capacity) || 0;
+                    totalCapacity += cap;
+
+                    if (r.status === "Available") {
+                        available++;
+                    } else if (r.status === "Occupied") {
+                        occupied++;
+                        occupiedCapacity += cap;
+                    } else if (r.status === "Maintenance") {
+                        maintenance++;
+                    }
+                });
+
+                // Update text indicators
+                document.getElementById("statTotalRooms").textContent = totalRooms;
+                document.getElementById("statAvailableRooms").textContent = available;
+                document.getElementById("statOccupiedRooms").textContent = occupied;
+                document.getElementById("statTotalCapacity").textContent = totalCapacity;
+
+                // Percentages
+                const pctAvailVal = totalRooms > 0 ? Math.round((available / totalRooms) * 100) : 0;
+                const pctOccVal = totalRooms > 0 ? Math.round((occupied / totalRooms) * 100) : 0;
+                const pctMaintVal = totalRooms > 0 ? Math.round((maintenance / totalRooms) * 100) : 0;
+                const pctCapVal = totalCapacity > 0 ? Math.round((occupiedCapacity / totalCapacity) * 100) : 0;
+
+                document.getElementById("pctAvailable").textContent = pctAvailVal + "%";
+                document.getElementById("pctOccupied").textContent = pctOccVal + "%";
+                document.getElementById("pctMaintenance").textContent = pctMaintVal + "%";
+
+                document.getElementById("barAvailable").style.width = pctAvailVal + "%";
+                document.getElementById("barOccupied").style.width = pctOccVal + "%";
+                document.getElementById("barMaintenance").style.width = pctMaintVal + "%";
+
+                document.getElementById("valOccupiedCapacity").textContent = occupiedCapacity;
+                document.getElementById("valTotalCapacity").textContent = totalCapacity;
+                document.getElementById("pctCapacity").textContent = pctCapVal + "%";
+                document.getElementById("barCapacity").style.width = pctCapVal + "%";
+
+            } catch (err) {
+                console.error("Error fetching dashboard statistics:", err);
+            }
+        }
+
+        fetchDashboardStats();
+    </script>
+
+</body>
+</html>

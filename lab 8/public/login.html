@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Hostel Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="home-page">
+
+    <div class="modal-card" style="box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e1e8ed;">
+
+        <div class="modal-header">
+            <h2>Admin Login</h2>
+            <a href="index.html" style="text-decoration: none; color: #94a3b8; font-size: 20px;">&times;</a>
+        </div>
+
+        <form id="loginForm">
+
+            <div class="form-field">
+                <label for="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username"
+                    required
+                >
+            </div>
+
+            <div class="form-field">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn-primary btn-block">Login</button>
+
+            <p id="loginMessage" class="status-msg"></p>
+
+        </form>
+
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+            const messageEl = document.getElementById("loginMessage");
+
+            if (username === "student" || username === "staff") {
+                messageEl.textContent = "Only admin functionality is implemented in this version.";
+                messageEl.className = "status-msg warning";
+                return;
+            }
+
+            if (username === "admin" && password === "admin123") {
+                sessionStorage.setItem("isAdminLoggedIn", "true");
+                window.location.href = "admin.html";
+            } else {
+                messageEl.textContent = "Invalid admin username or password.";
+                messageEl.className = "status-msg error";
+            }
+        });
+    </script>
+
+</body>
+</html>

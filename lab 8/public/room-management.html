@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Management - Hostel Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div>
+            <h2>Hostel Management System</h2>
+            <span>Room Management</span>
+        </div>
+        <div>
+            <button onclick="window.location.href='admin.html'">Back to Dashboard</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <h1>Room Management</h1>
+
+        <!-- Add / Update Room -->
+
+        <section class="card">
+
+            <h2 id="formTitle">Add Room</h2>
+
+            <form id="roomForm">
+
+                <input type="hidden" id="roomId">
+
+                <div class="form-group">
+
+                    <div>
+                        <label>Room Number</label>
+                        <input
+                            type="text"
+                            id="room_no"
+                            placeholder="Example: A101"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label>Room Type</label>
+
+                        <select id="room_type" required>
+                            <option value="">Select Type</option>
+                            <option value="Single">Single</option>
+                            <option value="Double">Double</option>
+                            <option value="Triple">Triple</option>
+                            <option value="Four Sharing">Four Sharing</option>
+                        </select>
+
+                    </div>
+
+                    <div>
+                        <label>Capacity</label>
+
+                        <input
+                            type="number"
+                            id="capacity"
+                            min="1"
+                            placeholder="Auto-filled"
+                            required
+                            readonly
+                        >
+
+                    </div>
+
+                    <div>
+                        <label>Status</label>
+
+                        <select id="status">
+                            <option value="Available">Available</option>
+                            <option value="Occupied">Occupied</option>
+                            <option value="Maintenance">Maintenance</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="buttons">
+
+                    <button type="submit" id="submitButton">
+                        Add Room
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary"
+                        onclick="resetForm()"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </form>
+
+            <p id="message"></p>
+
+        </section>
+
+
+        <!-- Room List -->
+
+        <section class="card">
+
+            <div class="section-header">
+
+                <h2>Existing Rooms</h2>
+
+                <button onclick="loadRooms()">
+                    Refresh
+                </button>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Room No.</th>
+                        <th>Type</th>
+                        <th>Capacity</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="roomTableBody">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>

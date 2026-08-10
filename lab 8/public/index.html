@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="site-body">
+
+    <!-- Top Navigation Bar -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-brand">
+                <span class="brand-title">Hostel Management System</span>
+            </div>
+            <nav class="site-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#modules">Modules</a>
+                <a href="#features">Features</a>
+                <a href="#contact">Contact</a>
+                <button class="nav-btn-login" onclick="openLoginModal()">Admin Login</button>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-container">
+            
+            <h1 class="hero-title">Hostel Management System</h1>
+            <p class="hero-subtitle">A digital room allocation & management platform for campus hostels, powered by Express.js, Mongoose & MongoDB.</p>
+            <div class="hero-actions">
+                <button class="btn-hero-primary" onclick="openLoginModal()">Admin Login</button>
+                
+           
+    </section>
+
+
+    <!-- Main Page Content -->
+    <main class="page-content">
+
+        <!-- About Us Section -->
+        <section id="about" class="content-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>About the System</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>System Overview</h3>
+                        <p>The Hostel Management System is a web-based administrative platform developed to simplify campus hostel operations. It replaces manual registers with a digital room management workflow, allowing staff to track room status, enforce capacity limits, and maintain room records efficiently.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Architecture & Purpose</h3>
+                        <p>Built as a RESTful service implementation, the system separates frontend interaction from backend business logic. Fetch API communicates seamlessly with Express REST endpoints, persisting room states reliably inside a MongoDB database.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Our Modules Section -->
+        <section id="modules" class="content-section bg-alt">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Hostel Modules</h2>
+                    <p class="section-subtitle">System functionality separated into dedicated administrative modules</p>
+                    <div class="header-line"></div>
+                </div>
+                <div class="modules-grid">
+
+                    <div class="site-module-card active">
+                        <div class="card-badge badge-active">ACTIVE</div>
+                        <h3>Room Management</h3>
+                        <p>Create, view, update, and delete hostel room records with real-time status monitoring.</p>
+                    </div>
+
+                    <div class="site-module-card disabled">
+                        <div class="card-badge badge-inactive">Inactive</div>
+                        <h3>Student Management</h3>
+                        <p>Student registration, room allotment, and resident records.</p>
+                    </div>
+
+                    <div class="site-module-card disabled">
+                        <div class="card-badge badge-inactive">Inactive</div>
+                        <h3>Staff Management</h3>
+                        <p>Warden profiles, maintenance staff, and administrative access.</p>
+                    </div>
+
+                    <div class="site-module-card disabled">
+                        <div class="card-badge badge-inactive">Inactive</div>
+                        <h3>Fee Management</h3>
+                        <p>Hostel fee collection, pending dues, and payment logs.</p>
+                    </div>
+
+                    <div class="site-module-card disabled">
+                        <div class="card-badge badge-inactive">Inactive</div>
+                        <h3>Complaint Management</h3>
+                        <p>Maintenance complaints, repair tracking, and issue resolution.</p>
+                    </div>
+
+                    <div class="site-module-card disabled">
+                        <div class="card-badge badge-inactive">Inactive</div>
+                        <h3>Reports</h3>
+                        <p>Occupancy metrics, capacity utilization, and system analytics.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        
+
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="content-section bg-alt">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Contact Us</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-info-grid">
+                        <div class="contact-item">
+                            <h4>Office Location</h4>
+                            <p>Campus Hostel Administrative Block<br>Room 102, Ground Floor</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Email & Support</h4>
+                            <p>hosteladmin@university.edu<br>support@hostel.edu</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Contact Phone</h4>
+                            <p>+91 98765 43210<br>080-2345-6789</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Office Hours</h4>
+                            <p>Monday – Friday: 9:00 AM – 5:00 PM<br>Saturday: 9:00 AM – 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Hostel Management System | RESTful Service Implementation</p>
+        </div>
+    </footer>
+
+
+    <!-- Admin Login Modal -->
+    <div id="loginModal" class="modal-overlay">
+
+        <div class="modal-card">
+
+            <div class="modal-header">
+                <h2>Admin Login</h2>
+                <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+            </div>
+
+            <form id="loginForm">
+
+                <div class="form-field">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter admin username"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-primary btn-block">Login</button>
+
+                <p id="loginMessage" class="status-msg"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        function openLoginModal() {
+            document.getElementById("loginModal").classList.add("show");
+            document.getElementById("loginMessage").textContent = "";
+        }
+
+        function closeLoginModal() {
+            document.getElementById("loginModal").classList.remove("show");
+        }
+
+        // Close modal on clicking overlay background
+        window.onclick = function(event) {
+            const modal = document.getElementById("loginModal");
+            if (event.target === modal) {
+                closeLoginModal();
+            }
+        };
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+            const messageEl = document.getElementById("loginMessage");
+
+            if (username === "student" || username === "staff") {
+                messageEl.textContent = "Only admin functionality is implemented in this version.";
+                messageEl.className = "status-msg warning";
+                return;
+            }
+
+            if (username === "admin" && password === "admin123") {
+                sessionStorage.setItem("isAdminLoggedIn", "true");
+                window.location.href = "admin.html";
+            } else {
+                messageEl.textContent = "Invalid admin username or password.";
+                messageEl.className = "status-msg error";
+            }
+        });
+    </script>
+
+</body>
+</html>
