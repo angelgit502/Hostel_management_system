@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hostel File System</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        header {
+            background: #172033;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .box h2 {
+            margin-top: 0;
+            color: #172033;
+        }
+
+        #fileList {
+            min-height: 250px;
+        }
+
+        .file {
+            padding: 12px;
+            margin: 8px 0;
+            background: #eef2f7;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .file:hover {
+            background: #dce5ef;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            border: none;
+            padding: 12px 18px;
+            margin: 5px 3px;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #159a72;
+            color: white;
+            font-size: 14px;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        .delete {
+            background: #dc3545;
+        }
+
+        #result {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            background: #eef2f7;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Hostel File System</h1>
+        <p>Hostel Management File Management</p>
+    </header>
+
+    <div class="container">
+
+        <!-- FILE LIST -->
+        <div class="box">
+
+            <h2>Files</h2>
+
+            <div id="fileList">
+                Loading files...
+            </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+        <div class="box">
+
+            <h2>Actions</h2>
+
+            <input
+                type="text"
+                id="filename"
+                placeholder="Filename"
+            >
+
+            <textarea
+                id="content"
+                placeholder="Content"
+            ></textarea>
+
+
+            <button onclick="createFile()">
+                Create File
+            </button>
+
+            <button onclick="appendFile()">
+                Append to File
+            </button>
+
+            <button onclick="modifyFile()">
+                Modify File
+            </button>
+
+            <button
+                class="delete"
+                onclick="deleteFile()">
+                Delete File
+            </button>
+
+
+            <div id="result">
+                Select a file or perform an action.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const API = "http://localhost:8000";
+
+
+        // LOAD FILES
+        async function loadFiles() {
+
+            try {
+
+                const response = await fetch(`${API}/files`);
+
+                const files = await response.json();
+
+                const fileList = document.getElementById("fileList");
+
+                fileList.innerHTML = "";
+
+                files.forEach(file => {
+
+                    const div = document.createElement("div");
+
+                    div.className = "file";
+
+                    div.innerText = file;
+
+                    div.onclick = () => selectFile(file);
+
+                    fileList.appendChild(div);
+
+                });
+
+            } catch (error) {
+
+                document.getElementById("fileList").innerText =
+                    "Unable to load files.";
+
+            }
+        }
+
+
+        // SELECT FILE
+        async function selectFile(filename) {
+
+            document.getElementById("filename").value = filename;
+
+            try {
+
+                const response =
+                    await fetch(`${API}/files/${filename}`);
+
+                const content = await response.text();
+
+                document.getElementById("content").value = content;
+
+                document.getElementById("result").innerText =
+                    "File loaded: " + filename;
+
+            } catch (error) {
+
+                document.getElementById("result").innerText =
+                    "Unable to read file.";
+
+            }
+        }
+
+
+        // CREATE
+        async function createFile() {
+
+            const filename =
+                document.getElementById("filename").value;
+
+            const content =
+                document.getElementById("content").value;
+
+            try {
+
+                const response = await fetch(`${API}/files`, {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        filename: filename,
+                        content: content
+                    })
+
+                });
+
+                const data = await response.json();
+
+                document.getElementById("result").innerText =
+                    data.message || data.error;
+
+                loadFiles();
+
+            } catch (error) {
+
+                document.getElementById("result").innerText =
+                    "Unable to create file.";
+
+            }
+        }
+
+
+        // APPEND
+        async function appendFile() {
+
+            const filename =
+                document.getElementById("filename").value;
+
+            const content =
+                document.getElementById("content").value;
+
+            try {
+
+                const response =
+                    await fetch(`${API}/files/append`, {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            filename: filename,
+                            content: content
+                        })
+
+                    });
+
+                const data = await response.json();
+
+                document.getElementById("result").innerText =
+                    data.message || data.error;
+
+                selectFile(filename);
+
+            } catch (error) {
+
+                document.getElementById("result").innerText =
+                    "Unable to append to file.";
+
+            }
+        }
+
+
+        // MODIFY
+        async function modifyFile() {
+
+            const filename =
+                document.getElementById("filename").value;
+
+            const content =
+                document.getElementById("content").value;
+
+            try {
+
+                const response =
+                    await fetch(`${API}/files/${filename}`, {
+
+                        method: "PUT",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            content: content
+                        })
+
+                    });
+
+                const data = await response.json();
+
+                document.getElementById("result").innerText =
+                    data.message || data.error;
+
+                selectFile(filename);
+
+            } catch (error) {
+
+                document.getElementById("result").innerText =
+                    "Unable to modify file.";
+
+            }
+        }
+
+
+        // DELETE
+        async function deleteFile() {
+
+            const filename =
+                document.getElementById("filename").value;
+
+            if (!filename) {
+
+                document.getElementById("result").innerText =
+                    "Please select a file first.";
+
+                return;
+            }
+
+            try {
+
+                const response =
+                    await fetch(`${API}/files/${filename}`, {
+
+                        method: "DELETE"
+
+                    });
+
+                const data = await response.json();
+
+                document.getElementById("result").innerText =
+                    data.message || data.error;
+
+                document.getElementById("filename").value = "";
+
+                document.getElementById("content").value = "";
+
+                loadFiles();
+
+            } catch (error) {
+
+                document.getElementById("result").innerText =
+                    "Unable to delete file.";
+
+            }
+        }
+
+
+        // LOAD FILES WHEN PAGE OPENS
+        loadFiles();
+
+    </script>
+
+</body>
+
+</html>

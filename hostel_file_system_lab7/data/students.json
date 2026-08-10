@@ -1,0 +1,67 @@
+[
+  {
+    "student_id": 101,
+    "name": "Angel",
+    "age": 20,
+    "gender": "Female",
+    "course": "MCA",
+    "phone": "9876543210"
+  },
+  {
+    "student_id": 102,
+    "name": "Anu",
+    "age": 21,
+    "gender": "Female",
+    "course": "BCA",
+    "phone": "9876543211"
+  },
+  {
+    "student_id": 103,
+    "name": "John",
+    "age": 22,
+    "gender": "Male",
+    "course": "MCA",
+    "phone": "9876543212"
+  },
+  {
+    "student_id": 104,
+    "name": "lily",
+    "age": 20,
+    "gender": "Female",
+    "course": "MCA",
+    "phone": "9876543213"
+  }
+][
+  {
+    "student_id": 101,
+    "name": "Angel",
+    "age": 20,
+    "gender": "Female",
+    "course": "MCA",
+    "phone": "9876543210"
+  },
+  {
+    "student_id": 102,
+    "name": "Anu",
+    "age": 21,
+    "gender": "Female",
+    "course": "BCA",
+    "phone": "9876543211"
+  },
+  {
+    "student_id": 103,
+    "name": "John",
+    "age": 22,
+    "gender": "Male",
+    "course": "MCA",
+    "phone": "9876543212"
+  },
+  {
+    "student_id": 104,
+    "name": "lily",
+    "age": 20,
+    "gender": "Female",
+    "course": "MCA",
+    "phone": "9876543213"
+  }
+]

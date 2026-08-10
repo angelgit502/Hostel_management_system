@@ -1,0 +1,8 @@
+[
+  {
+    "complaint_id": 1,
+    "student_id": 101,
+    "complaint": "Fan not working",
+    "status": "Pending"
+  }
+]
