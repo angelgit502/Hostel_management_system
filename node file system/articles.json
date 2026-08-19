@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "React Basics",
+    "description": "Introduction to React components and JSX."
+  },
+  {
+    "id": 2,
+    "name": "Tailwind CSS",
+    "description": "Utility-first CSS framework for rapid UI development."
+  },
+  {
+    "id": 3,
+    "name": "Node.js",
+    "description": "JavaScript runtime for building backend applications."
+  },
+  {
+    "id": 4,
+    "name": "HTTP Module",
+    "description": "Core Node.js module used to create web servers."
+  },
+  {
+    "id": 5,
+    "name": "File System",
+    "description": "Node.js fs module for reading and writing files."
+  },
+  {
+    "name": "Friendship",
+    "description": "You are loved more than you know",
+    "id": 6
+  },
+  {
+    "name": "Samuel",
+    "description": "Hello ",
+    "id": 7
+  },
+  {
+    "name": "Some",
+    "description": "xyz",
+    "id": 8
+  },
+  {
+    "name": "Anooja",
+    "description": "Hi Good morning",
+    "id": 9
+  },
+  {
+    "id": 6,
+    "name": "Express.js",
+    "description": "Framework for building Node.js web applications."
+  }
+]
